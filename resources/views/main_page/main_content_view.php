@@ -174,7 +174,7 @@
                                                  }
                                                  }
                                                  $rec= new Recursion;
-                                                 $result = $rec->get_cat($special_filter);
+                                                 $result = $rec->get_cat($menu);
                                                  //Выводи каталог на экран с помощью рекурсивной функции
 
                                                  $rec->view_cat($result,0,0);

@@ -23,7 +23,7 @@ class MainController extends Controller
     {
 
 
-    $data['special_filter']=DB::select('select * from specializations');
+    $data['menu']=array();
 
     $data['title']="Фрилансим по крупному";
         $data['keywords']="Фрилансим по крупному";

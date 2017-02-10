@@ -21,4 +21,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::post('/MainController/ajax_usersessions', 'MainController@ajax_usersessions');
 
-
+Route::get('auth/facebook', 'FacebookController@redirectToProvider')->name('facebook.login');
+Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');

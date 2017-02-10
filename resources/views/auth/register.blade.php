@@ -65,6 +65,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+                                <a class="btn btn-primary" href="{{ route('facebook.login') }}">
+                                    Facebook Register
+                                </a>
                             </div>
                         </div>
                     </form>
