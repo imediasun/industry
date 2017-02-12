@@ -11,7 +11,9 @@
 |
 */
 Route::get('/', 'MainController@index');
-
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/customers_registration', 'AdminController@customers_registration');
+Route::get('/admin/add_good', 'AdminController@add_good');
 /*Route::get('/', function () {
     return view('index');
 });*/

@@ -7,10 +7,8 @@
         <!--Brand logo & name-->
         <!--================================-->
         <div class="navbar-header">
-            <a href="index.html" style="" class="navbar-brand"> <i style="color:#fff;margin-top:10px" class="fa fa-cube brand-icon"></i>
-                <div style="margin-top:25px" class="brand-title"> <span class="brand-text">UKRAINIAN INDUSTRY</span> </div>
-                <div class="brand-title"> <span class="brand-text">PLATFORM</span> </div>
-                <div class="brand-title"> <span class="brand-text">MCV</span> </div>
+            <a href="index.html" class="navbar-brand"> <i class="fa fa-cube brand-icon"></i>
+                <div class="brand-title"> <span class="brand-text">U.I.P MCV ADMIN</span> </div>
             </a>
         </div>
         <!--================================-->

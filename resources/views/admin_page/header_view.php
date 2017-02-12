@@ -7,10 +7,8 @@
         <!--Brand logo & name-->
         <!--================================-->
         <div class="navbar-header">
-            <a href="index.html" style="" class="navbar-brand"> <i style="color:#fff;margin-top:10px" class="fa fa-cube brand-icon"></i>
-                <div style="margin-top:25px" class="brand-title"> <span class="brand-text">UKRAINIAN INDUSTRY</span> </div>
-                <div class="brand-title"> <span class="brand-text">PLATFORM</span> </div>
-                <div class="brand-title"> <span class="brand-text">MCV</span> </div>
+            <a href="index.html" class="navbar-brand"> <i class="fa fa-cube brand-icon"></i>
+                <div class="brand-title"> <span class="brand-text">U.I.P MCV ADMIN</span> </div>
             </a>
         </div>
         <!--================================-->
@@ -193,6 +191,83 @@
 
 
             </ul>
+
+
+                <!--Navigation logo slider-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                
+                                <div class="owl-carousel">
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/adidas.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/budweiser.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/burger-king.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/chipotle.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/dunkin-donuts.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/ford.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/klondike.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nike.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nissan.png">
+                                    </div>
+                                    <div class="owl-carousel--item">
+                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/samsung.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End Navigation logo slider-->
+<script>
+                // set variable used for events
+                var owl = $(".owl-carousel");
+
+                // initialize
+                owl.owlCarousel({
+                items: 5,
+                margin: 10,
+                loop: true,
+                center: true,
+                mouseDrag: true,
+                touchDrag: true,
+                nav: false,
+                dots: false,
+                lazyLoad: true,
+                autoplay: true,
+                autoplayTimeout: 7000,
+                autoplayHoverPause: true
+                });
+
+                // set up keypress events
+                $(document).keydown(function(e) {
+                if (e.keyCode === 37) {
+                owl.trigger('prev.owl.carousel');
+                } else if (e.keyCode === 39) {
+                owl.trigger('next.owl.carousel');
+                }
+                });
+</script>
+
             <ul class="nav navbar-top-links pull-right">
 
                 <!--Language selector-->
