@@ -21,6 +21,7 @@ Route::get('/admin/add_good', 'AdminController@add_good');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/category/{id}', 'CategoryController@index')->where('id', '[0-9]+');
 Route::post('/MainController/ajax_usersessions', 'MainController@ajax_usersessions');
 
 Route::get('auth/facebook', 'FacebookController@redirectToProvider')->name('facebook.login');

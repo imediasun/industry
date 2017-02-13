@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Http\Controllers\MenuController
 class AdminController extends Controller
 {
 
     private function menu(){
-    return $data_nav['menu']=DB::table('admin_categories')
-        ->get();
+    return $data_nav['menu']=MenuController::index('admin_categories');
 
     }
     public function index()

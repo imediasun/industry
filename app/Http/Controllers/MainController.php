@@ -9,6 +9,7 @@ use DB;
 use App\Good;
 use App\Category;
 use App\Http\Libraries\Display_lib;
+use App\Http\Controllers\MenuController;
 class MainController extends Controller
 {
     //
@@ -26,8 +27,7 @@ class MainController extends Controller
     //Get data from DB
 
         //menu
-    $data_nav['menu']=DB::table('categories')
-        ->get();
+        $data_nav['menu']=MenuController::index('categories');
       
         //goods
     $data_content['goods']['akcionniy']=Good::where('type', 1)
@@ -38,12 +38,12 @@ class MainController extends Controller
     $data_content['goods']['optoviy']=Good::where('type', 2)
         ->orderBy('created_at', 'desc')
         ->orderBy('updated_at', 'desc')
-        ->take(4)
+        ->take(5)
         ->get();
-    $data['goods']['rozdribny']=Good::where('type', 3)
+    $data_content['goods']['rozdribniy']=Good::where('type', 3)
         ->orderBy('created_at', 'desc')
         ->orderBy('updated_at', 'desc')
-        ->take(4)
+        ->take(5)
         ->get();
         //page
     $data_content['title']="Industry";

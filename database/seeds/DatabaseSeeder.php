@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             [
                 'parent_id' => 0,
                 'name' => 'Лікарські препарати',
-                'link'=> '/good?id=123456',
+                'link'=> '/good_category?id=',
                 'icon'=>'fa-plus-square'
             ],
             [
@@ -135,7 +135,131 @@ class DatabaseSeeder extends Seeder
                 'photo'=>'/img/glicesed.jpg',
                 'price'=>42000000,
                 'star'=>true
+            ],
+
+
+
+
+
+            [
+                'type' => 2,
+                'name' => 'Глицесед - КМП таблетки 0.1 г №50',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/glicesed.jpg',
+                'price'=>42000000,
+                'star'=>true
+            ],
+            [
+                'type' => 2,
+                'name' => 'Ливицитам 500 таблетки 500мг №60',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/livicitam.jpg',
+                'price'=>42000,
+                'star'=>true
+            ],
+            [
+                'type' => 2,
+                'name' => 'Валерианы настойка 25мг',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/valeriana.jpg',
+                'price'=>42,
+                'star'=>true
+            ],
+            [
+                'type' => 2,
+                'name' => 'Когнум таблетки 250 мг №50',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/kognum.jpg',
+                'price'=>420,
+                'star'=>true
+            ],
+            [
+                'type' => 2,
+                'name' => 'Новакаин дарница раствор для инъекций 0.5% 2мл №10',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/novakain.jpg',
+                'price'=>4200,
+                'star'=>true
+
+            ],
+            [
+                'type' => 2,
+                'name' => 'Валеріана',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/glicesed.jpg',
+                'price'=>42000000,
+                'star'=>true
+            ],
+
+
+
+
+            [
+                'type' => 3,
+                'name' => 'Глицесед - КМП таблетки 0.1 г №50',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/glicesed.jpg',
+                'price'=>42000000,
+                'star'=>true
+            ],
+            [
+                'type' => 3,
+                'name' => 'Ливицитам 500 таблетки 500мг №60',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/livicitam.jpg',
+                'price'=>42000,
+                'star'=>true
+            ],
+            [
+                'type' => 3,
+                'name' => 'Валерианы настойка 25мг',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/valeriana.jpg',
+                'price'=>42,
+                'star'=>true
+            ],
+            [
+                'type' => 3,
+                'name' => 'Когнум таблетки 250 мг №50',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/kognum.jpg',
+                'price'=>420,
+                'star'=>true
+            ],
+            [
+                'type' => 3,
+                'name' => 'Новакаин дарница раствор для инъекций 0.5% 2мл №10',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/novakain.jpg',
+                'price'=>4200,
+                'star'=>true
+
+            ],
+            [
+                'type' => 3,
+                'name' => 'Валеріана',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/glicesed.jpg',
+                'price'=>42000000,
+                'star'=>true
             ]
+
+
+
+
+
         ]);
 
 
