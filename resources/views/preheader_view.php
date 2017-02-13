@@ -53,14 +53,17 @@
 
     <!--SCRIPT-->
     <!--=================================================-->
-
+    <link href="/css/logoslider.css" rel="stylesheet">
+    <link href="/css/style_main_page.css" rel="stylesheet">
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="/jasmine/plugins/pace/pace.min.css" rel="stylesheet">
+    <link href="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="https://dl.dropboxusercontent.com/u/1499732/flexbox-grid/flexboxgrid.min.css" rel="stylesheet">
+
     <script src="/jasmine/plugins/pace/pace.min.js"></script>
     <script
-        src="https://code.jquery.com/jquery-3.1.1.js"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-        crossorigin="anonymous"></script>
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.min.js"></script>
 </head>
 
 <body>

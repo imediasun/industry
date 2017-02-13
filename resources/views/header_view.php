@@ -193,6 +193,80 @@
 
 
             </ul>
+            <!--Navigation logo slider-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="owl-carousel">
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/adidas.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/budweiser.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/burger-king.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/chipotle.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/dunkin-donuts.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/ford.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/klondike.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nike.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nissan.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/samsung.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End Navigation logo slider-->
+            <script>
+                // set variable used for events
+                var owl = $(".owl-carousel");
+
+                // initialize
+                owl.owlCarousel({
+                    items: 5,
+                    margin: 10,
+                    loop: true,
+                    center: true,
+                    mouseDrag: true,
+                    touchDrag: true,
+                    nav: false,
+                    dots: false,
+                    lazyLoad: true,
+                    autoplay: true,
+                    autoplayTimeout: 7000,
+                    autoplayHoverPause: true
+                });
+
+                // set up keypress events
+                $(document).keydown(function(e) {
+                    if (e.keyCode === 37) {
+                        owl.trigger('prev.owl.carousel');
+                    } else if (e.keyCode === 39) {
+                        owl.trigger('next.owl.carousel');
+                    }
+                });
+            </script>
             <ul class="nav navbar-top-links pull-right">
 
                 <!--Language selector-->

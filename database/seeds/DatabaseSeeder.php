@@ -59,40 +59,82 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        DB::table('type_of_goods')->insert([
 
+            [
+
+                'name' => 'Акціонний товар',
+
+            ],
+            [
+
+                'name' => 'Оптовий товар',
+
+            ],
+            [
+
+                'name' => 'Роздрібний товар',
+
+            ],
+
+        ]);
 
         DB::table('goods')->insert([
 
             [
-                'type' => 2,
-                'name' => 'Когнум',
-                'category'=>2
+                'type' => 1,
+                'name' => 'Глицесед - КМП таблетки 0.1 г №50',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/glicesed.jpg',
+                'price'=>42000000,
+                'star'=>true
             ],
             [
                 'type' => 1,
-                'name' => 'Kognum',
-                'category'=>2
+                'name' => 'Ливицитам 500 таблетки 500мг №60',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/livicitam.jpg',
+                'price'=>42000,
+                'star'=>true
             ],
             [
                 'type' => 1,
-                'name' => 'Kognum',
-                'category'=>2
+                'name' => 'Валерианы настойка 25мг',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/valeriana.jpg',
+                'price'=>42,
+                'star'=>true
             ],
             [
                 'type' => 1,
-                'name' => 'Kognum',
-                'category'=>2
+                'name' => 'Когнум таблетки 250 мг №50',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/kognum.jpg',
+                'price'=>420,
+                'star'=>true
             ],
             [
                 'type' => 1,
-                'name' => 'Kognum',
-                'category'=>2
+                'name' => 'Новакаин дарница раствор для инъекций 0.5% 2мл №10',
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/novakain.jpg',
+                'price'=>4200,
+                'star'=>true
 
             ],
             [
                 'type' => 1,
                 'name' => 'Валеріана',
-                'category'=>2
+                'category'=>3,
+                'articul'=>'11244234',
+                'photo'=>'/img/glicesed.jpg',
+                'price'=>42000000,
+                'star'=>true
             ]
         ]);
 

@@ -33,7 +33,7 @@ class MainController extends Controller
     $data_content['goods']['akcionniy']=Good::where('type', 1)
         ->orderBy('created_at', 'desc')
         ->orderBy('updated_at', 'desc')
-        ->take(4)
+        ->take(5)
         ->get();
     $data_content['goods']['optoviy']=Good::where('type', 2)
         ->orderBy('created_at', 'desc')

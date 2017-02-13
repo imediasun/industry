@@ -17,7 +17,10 @@ class CreateGoodsTable extends Migration
             $table->increments('id');
             $table->integer('type')->default(0);
             $table->integer('category')->default(0);
+            $table->integer('articul')->default(0);
             $table->string('name');
+            $table->string('photo');
+            $table->boolean('star');
             $table->bigInteger('price')->default(0);
             $table->timestamps();
         });
