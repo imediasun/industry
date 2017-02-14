@@ -1,3 +1,12 @@
+.a_drop:hover {
+	color:#000;
+}
+.face_btn_:hover>.username{
+color:#000;
+
+}
+.a_drop{
+color:#fff}
 #page-content{
 padding-left:380px;
 
@@ -13,9 +22,14 @@ padding-left:380px;
 	
 }
 .panel-body{
-	height:350px;
+	height:300px;
 }
 .mar-hor{
 
+
+}
+.articul{margin-top:-40px;}
+#content-container{
+margin-top:50px;
 
 }

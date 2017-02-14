@@ -404,7 +404,7 @@ display:block
 	background-color: transparent;
 	color: #fff;
 	padding: 0;
-	height: 160px; /*160px*/
+	height: 210px; /*160px*/
 	position: relative;
 	font-size: 24px;
 	z-index: 2;
@@ -416,7 +416,7 @@ display:block
 }
 .brand-title, .brand-icon {
 	display: block;
-	line-height: 33px /*60px*/
+	line-height: 39px /*60px*/
 }
 .brand-icon {
 	width: 50px;
@@ -427,9 +427,10 @@ display:block
 }
 .brand-text {
 	display: block;
-	font-size: 24px;
+	font-size: 32px;
 	font-weight: 600;
 	text-align:center;
+	margin-left:-20px;
 }
 
 /* NAVBAR ICON & BUTTON */
@@ -558,7 +559,7 @@ display:block
 	position: absolute;
 	display: block;
 	width: 100%;
-	height: 60px;
+	height: 210px;
 }
 #container.mainnav-out .navbar-header:before {
 	width: 0
@@ -570,14 +571,14 @@ display:block
 	background-color: #002e6a;
 }
 .navbar-content {
-	margin-left: 320px; /*220px*/
+	margin-left: 420px; /*220px*/
 	background-color: transparent
 }
 #navbar .brand-title {
 	padding: 0 0 0 50px
 }
 #container.mainnav-in .navbar-brand, #container.mainnav-lg .navbar-brand, #container.mainnav-in .brand-title, #container.mainnav-lg .brand-title {
-	width: 320px /*320px*/
+	width: 420px /*320px*/
 }
 #container.mainnav-in .brand-icon, #container.mainnav-sm .brand-icon, #container.mainnav-lg .brand-icon {
 	color: #000;
@@ -632,10 +633,11 @@ display:block
 	top: 0;
 	bottom: 0;
 	z-index: 4;
-	min-height: 100%
+	min-height: 100%;
+	margin-top:150px;
 }
 #mainnav {
-	margin-top:100px;
+	
 	height: 100%;
 	background-color: #002e6a
 }

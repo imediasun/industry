@@ -14,6 +14,12 @@
     <section id="content-container">
             <header class="pageheader">
                 <h3><i class="fa fa-home"></i> Dashboard </h3>
+                <div style="width:600px;top:-30px;margin:0 auto;" class="input-group mar-btm">
+                                            <input placeholder="Пошук" class="form-control" type="text">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary btn-labeled fa fa-search" type="button">Пошук</button>
+                                            </span>
+                </div>
                 <div class="breadcrumb-wrapper"> <span class="label">You are here:</span>
                     <ol class="breadcrumb">
                         <li> <a href="#"> Home </a> </li>
@@ -28,7 +34,7 @@
             <div id="page-content">
 
                 <div class="row">
-                <div class="col-md-1" style="height:auto;"><h3 class="vertical_text mar-hor">Акционный товар</h3></div>
+                <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Акционный товар</h3></div>
 
 
                     <?
@@ -44,7 +50,7 @@
                                         <h5 class=""><?=$val['original']['name']?></h5>
                                         <img style="width:95%;margin:0 auto;" src="<?=$val['original']['photo']?>">
 
-                                        <p class="mar-hor"><?='Артікул '.$val['original']['articul']?></p>
+                                        <p class="articul mar-hor"><?='Артікул '.$val['original']['articul']?></p>
                                         <img style="width:26px;display:inline-block;float:left;" src="/img/cat_icon.png">
                                         <h5 style="float:left;" class=""><?
 
@@ -91,7 +97,7 @@
                                         <h5 class=""><?=$val['original']['name']?></h5>
                                         <img style="width:95%;margin:0 auto;" src="<?=$val['original']['photo']?>">
 
-                                        <p class="mar-hor"><?='Артікул '.$val['original']['articul']?></p>
+                                        <p class="articul mar-hor"><?='Артікул '.$val['original']['articul']?></p>
                                         <img style="width:26px;display:inline-block;float:left;" src="/img/cat_icon.png">
                                         <h5 style="float:left;" class=""><?
 

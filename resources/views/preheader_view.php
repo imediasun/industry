@@ -55,6 +55,7 @@
     <!--=================================================-->
     <link href="/css/logoslider.css" rel="stylesheet">
     <link href="/css/style_main_page.css" rel="stylesheet">
+    <link href="/css/bootstrap-social.css" rel="stylesheet">
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="/jasmine/plugins/pace/pace.min.css" rel="stylesheet">
     <link href="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.css" rel="stylesheet">
