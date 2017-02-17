@@ -182,52 +182,8 @@
                                             }
 
                                         })
-                                        $('#close_window').click(function(){
-                                            $('#window').css('display','none');
-                                            $('#appl_window').css('display','none');
-                                        })
-                                        $('.prod_btn').click(function(){
-                                            var oper='<?echo $image_index;?>';
-                                            var obj =$('#bar_block').find('div');
-                                            var name_prod = $('input[name=name_prod]').val()
-                                            var type_ar=[];
-                                            $.each(obj, function(key,value) {
-                                                type_ar.push(value.children[2].value);
-                                            })
-                                            var inf='';
-                                            var ses='';
-                                            ses='<?if(isset($_SESSION['logo'])){echo $_SESSION['logo'];}?>';
 
-                                            if(ses!==''){
-                                                if(type_ar.length<1){
-                                                    inf+='\n\r Не выбран ни один тип дверей ';
-                                                }
-                                                if(!name_prod){
-                                                    inf+='\n\r Не определено название производителя';
-                                                }
-                                                if(inf!==''){
-                                                    alert(inf)
-                                                }
-                                                else{
-                                                    $.ajax({
-                                                        type: 'POST',
-                                                        dataType:'json',
-                                                        url: '/functions_ajax/save_producer/',
-                                                        data:{oper:oper,name_prod:name_prod,type_ar:type_ar},
-                                                        success: function(data){
-                                                            alert('Информация о производителе обновлена в базе данных')
-                                                            location.reload();
-                                                        },
-                                                        error:  function(xhr, str){
-                                                            alert('Возникла ошибка: ' + xhr.responseCode);
-                                                        }
-                                                    });
-                                                }
-                                            }
-                                            else{
-                                                alert('Вы не добавили логотип')
-                                            }
-                                        })
+
 
                                         $(document).ready(function() {
 

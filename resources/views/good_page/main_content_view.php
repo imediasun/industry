@@ -255,20 +255,21 @@
                             <div style="height:170px" class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-9">
-                                        <h3>Фрезерный станок</h3>
+                                        <h3 style ="position:relative;display:inline-block">Фрезерный станок</h3><button style ="margin-left:40px;position:relative;display:inline-block" class="btn btn-success btn-icon icon-lg fa fa-star"></button>
                                         <p>марка Hitachi DC 435666</p>
+
                                     </div>
                                 </div>
                                 <div style="margin-top:-10px" class="goods_buttons">
-                                    <button style="width:38%;height:50px" class="btn btn-primary">12000 грн</button>
+                                    <button style="width:35%;height:50px" class="btn btn-primary">12000 грн</button>
 
-                                    <div style="display:inline-block;position:relative;width:23%;height:50px" class="">
+                                    <div style="display:inline-block;position:relative;width:20%;height:50px" class="">
                                         <div style="height:50px;position:absolute;top:28px;left:7px">
                                             <input class="inp_count" style="margin-left:-7px;width:80px;" value="1">
                                             <i style="padding-left:5px;cursor:pointer;position:absolute" class="up_count fa fa-caret-square-o-up" aria-hidden="true"></i>
                                             <i style="padding-left:5px;cursor:pointer;position:absolute;right:-16px" class="bottom_count fa fa-caret-square-o-down" aria-hidden="true"></i>
                                         </div></div>
-                                    <button style="width:37%;height:50px" class="btn btn-warning">
+                                    <button style="position:relative;left:25px;width:35%;height:50px" class="btn btn-warning">
 
                                         придбати <i class="fa  fa-shopping-cart fa-2x"></i></button>
 
@@ -339,7 +340,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div style="margin-left:100px;" class="col-md-3">
 
                         <!--List Todo-->
                         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

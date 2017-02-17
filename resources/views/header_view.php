@@ -276,7 +276,7 @@
 
 
 
-            <ul style="top:150px;position:absolute;left:110px" class=" nav navbar-top-links pull-left">
+            <ul style="top:150px;position:absolute;left:10px" class=" nav navbar-top-links pull-left">
 
                 
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -418,7 +418,7 @@
 
 
 
-            <ul style="margin-top:40px"class="nav navbar-top-links pull-right">
+            <ul style="bottom:10px;right:10px;position:absolute;" class="nav navbar-top-links pull-right">
 
                 
 

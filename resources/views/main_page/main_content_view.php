@@ -13,7 +13,7 @@
     <!--===================================================-->
     <section id="content-container">
             <header class="pageheader">
-                <h3><i class="fa fa-home"></i> Dashboard </h3>
+                <h3><i class="fa fa-home"></i> Головна сторінка </h3>
                 <div style="width:600px;top:-30px;margin:0 auto;" class="input-group mar-btm">
                                             <input placeholder="Пошук" class="form-control" type="text">
                                             <span class="input-group-btn">
@@ -22,8 +22,8 @@
                 </div>
                 <div class="breadcrumb-wrapper"> <span class="label">You are here:</span>
                     <ol class="breadcrumb">
-                        <li> <a href="#"> Home </a> </li>
-                        <li class="active"> Dashboard </li>
+                        <li> <a href="#"> Головна </a> </li>
+                        <li class="active"> Головна сторінка </li>
                     </ol>
                 </div>
             </header>
@@ -42,7 +42,7 @@
 
 
                         ?>
-                        <div class="col-md-2">
+                        <div style="margin-left:-40px;" class="col-md-2">
                             <div class="panel">
                                 <div class="panel-body np">
 
@@ -81,7 +81,7 @@
                   
                 </div>
                 <div class="row">
-                    <div class="col-md-1" style="height:auto;"><h3 class="vertical_text mar-hor">Оптовий товар</h3></div>
+                    <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Оптовий товар</h3></div>
 
 
                     <?
@@ -89,7 +89,7 @@
 
 
                         ?>
-                        <div class="col-md-2">
+                        <div style="margin-left:-40px;" class="col-md-2">
                             <div class="panel">
                                 <div class="panel-body np">
 
@@ -128,7 +128,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-1" style="height:auto;"><h3 class="vertical_text mar-hor">Роздрібний товар</h3></div>
+                    <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Роздрібний товар</h3></div>
 
 
                     <?
@@ -136,7 +136,7 @@
 
 
                         ?>
-                        <div class="col-md-2">
+                        <div style="margin-left:-40px;" class="col-md-2">
                             <div class="panel">
                                 <div class="panel-body np">
 
