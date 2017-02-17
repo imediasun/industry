@@ -65,7 +65,7 @@
                                           <li>
                                         <a href="'.$arr[$parent_id][$i]->link.'">';
                                     if($parent_id == 0){
-                                        echo '<i class="fa '.$arr[$parent_id][$i]->icon.'"></i>';
+                                        /*echo '<i class="fa '.$arr[$parent_id][$i]->icon.'"></i>';*/
                                     }
 
                                     echo '

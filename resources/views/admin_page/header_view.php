@@ -7,8 +7,12 @@
         <!--Brand logo & name-->
         <!--================================-->
         <div class="navbar-header">
-            <a href="index.html" class="navbar-brand"> <i class="fa fa-cube brand-icon"></i>
-                <div class="brand-title"> <span class="brand-text">U.I.P MCV ADMIN</span> </div>
+            <a href="index.html" style="" class="navbar-brand">
+                <div style="margin-top:25px" class="brand-title"> 
+                <span class="brand-text">UKRAINIAN INDUSTRY</span> </div>
+                <div class="brand-title"> <span class="brand-text">PLATFORM</span> </div>
+                <div class="brand-title"> <span class="brand-text">MCV</span> </div>
+                <div  class="brand-title"> <span style="font-size:19px;" class="brand-text">Українська промислова платформа</span> </div>
             </a>
         </div>
         <!--================================-->
@@ -17,15 +21,7 @@
         <!--Navbar Dropdown-->
         <!--================================-->
         <div class="navbar-content clearfix">
-            <ul class="nav navbar-top-links pull-left">
-
-                <!--Navigation toogle button-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <li class="tgl-menu-btn">
-                    <a class="mainnav-toggle" href="#"> <i class="fa fa-navicon fa-lg"></i> </a>
-                </li>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End Navigation toogle button-->
+            <ul style="position:relative;left:-40px;top:25px" class="nav navbar-top-links pull-right">
 
                 <!--Messages Dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -116,7 +112,7 @@
                 <!--Notification dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i class="fa fa-bell fa-lg"></i> <span class="badge badge-header badge-danger">5</span> </a>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i  class="fa fa-bell fa-lg"></i> <span  class="badge badge-header badge-danger">5</span> </a>
 
                     <!--Notification dropdown menu-->
                     <div class="dropdown-menu dropdown-menu-md with-arrow">
@@ -130,7 +126,7 @@
                                     <!-- Dropdown list-->
                                     <li>
                                         <a href="#" class="media">
-                                            <div class="media-left"> <span class="icon-wrap icon-circle bg-primary"> <i class="fa fa-comment fa-lg"></i> </span> </div>
+                                            <div class="media-left"> <span class="icon-wrap icon-circle bg-primary"> <i  class="fa fa-comment fa-lg"></i> </span> </div>
                                             <div class="media-body">
                                                 <div class="text-nowrap">New comments waiting approval</div>
                                                 <small class="text-muted">15 minutes ago</small> </div>
@@ -188,99 +184,239 @@
                 </li>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End notifications dropdown-->
+                <!--Messages Dropdown-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <li  class="a_drop dropdown">
+                    <a href="#"  data-toggle="dropdown" class=" dropdown-toggle"> <i  class="a_drop fa fa-shopping-cart fa-3x "></i> <span class="badge badge-header badge-warning">9</span> </a>
+
+                    <!--Message dropdown menu-->
+                    <div  class="dropdown-menu dropdown-menu-md with-arrow">
+                        <div class="pad-all bord-btm">
+                            <p class="text-lg text-muted text-thin mar-no">You have 3 messages.</p>
+                        </div>
+                        <div class="nano scrollable">
+                            <div class="nano-content">
+                                <ul class="head-list">
+
+                                    <!-- Dropdown list-->
+                                    <li>
+                                        <a href="#" class="media">
+                                            <div class="media-left"> <img src="img/av2.png" alt="Profile Picture" class="img-circle img-sm"> </div>
+                                            <div class="media-body">
+                                                <div class="text-nowrap">Andy sent you a message</div>
+                                                <small class="text-muted">15 minutes ago</small> </div>
+                                        </a>
+                                    </li>
+
+                                    <!-- Dropdown list-->
+                                    <li>
+                                        <a href="#" class="media">
+                                            <div class="media-left"> <img src="img/av4.png" alt="Profile Picture" class="img-circle img-sm"> </div>
+                                            <div class="media-body">
+                                                <div class="text-nowrap">Lucy sent you a message</div>
+                                                <small class="text-muted">30 minutes ago</small> </div>
+                                        </a>
+                                    </li>
+
+                                    <!-- Dropdown list-->
+                                    <li>
+                                        <a href="#" class="media">
+                                            <div class="media-left"> <img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm"> </div>
+                                            <div class="media-body">
+                                                <div class="text-nowrap">Jackson sent you a message</div>
+                                                <small class="text-muted">40 minutes ago</small> </div>
+                                        </a>
+                                    </li>
+
+                                    <!-- Dropdown list-->
+                                    <li>
+                                        <a href="#" class="media">
+                                            <div class="media-left"> <img src="img/av6.png" alt="Profile Picture" class="img-circle img-sm"> </div>
+                                            <div class="media-body">
+                                                <div class="text-nowrap">Donna sent you a message</div>
+                                                <small class="text-muted">5 hours ago</small> </div>
+                                        </a>
+                                    </li>
+
+                                    <!-- Dropdown list-->
+                                    <li>
+                                        <a href="#" class="media">
+                                            <div class="media-left"> <img src="img/av4.png" alt="Profile Picture" class="img-circle img-sm"> </div>
+                                            <div class="media-body">
+                                                <div class="text-nowrap">Lucy sent you a message</div>
+                                                <small class="text-muted">Yesterday</small> </div>
+                                        </a>
+                                    </li>
+
+                                    <!-- Dropdown list-->
+                                    <li>
+                                        <a href="#" class="media">
+                                            <div class="media-left"> <img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm"> </div>
+                                            <div class="media-body">
+                                                <div class="text-nowrap">Jackson sent you a message</div>
+                                                <small class="text-muted">Yesterday</small> </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Dropdown footer-->
+                        <div class="pad-all bord-top">
+                            <a href="#" class="btn-link text-dark box-block"> <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Messages </a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!--Navigation logo slider-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+
+
+
+            <ul style="top:150px;position:absolute;left:110px" class=" nav navbar-top-links pull-left">
+
+                
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End message dropdown-->
+                <li style="position:relative;left:23px;">
+                    
+                    <div  style="position:relative;margin-left:-20px;width:550px" class="brand-title"> <span style="position:relative;left:-20px;font-size:19px;display:inline-block;float:left" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span> 
+                    <a style="display:inline-block;float:left" class="btn btn-social-icon btn-twitter">
+                        <span class="fa fa-twitter"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-facebook">
+                        <span class="fa fa-facebook"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-google">
+                        <span class="fa fa-google"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-pinterest">
+                        <span class="fa fa-pinterest"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-vk">
+                        <span class="fa fa-vk"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-linkedin">
+                        <span class="fa fa-linkedin"></span>
+                     </a></div>
+                </li>
 
 
             </ul>
+            <!--Navigation logo slider-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
-                <!--Navigation logo slider-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                
-                                <div class="owl-carousel">
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/adidas.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/budweiser.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/burger-king.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/chipotle.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/dunkin-donuts.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/ford.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/klondike.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nike.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nissan.png">
-                                    </div>
-                                    <div class="owl-carousel--item">
-                                        <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/samsung.png">
-                                    </div>
-                                </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="container cont_logo">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="owl-carousel">
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/adidas.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/budweiser.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/burger-king.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/chipotle.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/dunkin-donuts.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/ford.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/klondike.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nike.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nissan.png">
+                            </div>
+                            <div class="owl-carousel--item">
+                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/samsung.png">
                             </div>
                         </div>
                     </div>
-                
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End Navigation logo slider-->
-<script>
+                </div>
+            </div>
+
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End Navigation logo slider-->
+            <script>
                 // set variable used for events
                 var owl = $(".owl-carousel");
 
                 // initialize
                 owl.owlCarousel({
-                items: 5,
-                margin: 10,
-                loop: true,
-                center: true,
-                mouseDrag: true,
-                touchDrag: true,
-                nav: false,
-                dots: false,
-                lazyLoad: true,
-                autoplay: true,
-                autoplayTimeout: 7000,
-                autoplayHoverPause: true
+                    items: 5,
+                    margin: 10,
+                    loop: true,
+                    center: true,
+                    mouseDrag: true,
+                    touchDrag: true,
+                    nav: false,
+                    dots: false,
+                    lazyLoad: true,
+                    autoplay: true,
+                    autoplayTimeout: 7000,
+                    autoplayHoverPause: true
                 });
 
                 // set up keypress events
                 $(document).keydown(function(e) {
-                if (e.keyCode === 37) {
-                owl.trigger('prev.owl.carousel');
-                } else if (e.keyCode === 39) {
-                owl.trigger('next.owl.carousel');
-                }
+                    if (e.keyCode === 37) {
+                        owl.trigger('prev.owl.carousel');
+                    } else if (e.keyCode === 39) {
+                        owl.trigger('next.owl.carousel');
+                    }
                 });
-</script>
+            </script>
 
-            <ul class="nav navbar-top-links pull-right">
+
+
+
+
+
+
+
+
+
+            <ul style="margin-top:40px"class="nav navbar-top-links pull-right">
+
+                
 
                 <!--Language selector-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <li class="dropdown">
-                    <a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown"> <span class="lang-selected"> <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English"> <span class="lang-id">EN</span> <span class="lang-name">English</span> </span>
+                <li class=" btn-facebook dropdown">
+                    <a id="demo-lang-switch" class=" lang-selector dropdown-toggle" href="#" data-toggle="dropdown"> <span class="lang-selected">  <span class="lang-id">EN</span> <span style="color:#fff" class="face_btn_ lang-name">English</span> </span>
                     </a>
 
                     <!--Language selector menu-->
                     <ul class="head-list dropdown-menu with-arrow">
                         <li>
                             <!--English-->
-                            <a href="#" class="active"> <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English"> <span class="lang-id">EN</span> <span class="lang-name">English</span> </a>
+                            <a href="#" class="active"> <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English"> <span class="lang-id">EN</span> <span class="lang-name">EN</span> </a>
                         </li>
                         <li>
                             <!--France-->
@@ -305,25 +441,23 @@
 
                 <!--User dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <li id="dropdown-user" class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right"> <span class="pull-right"> <img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture"> </span>
-                        <div class="username hidden-xs">John Doe</div>
+                <li id="dropdown-user" style="margin-left:5px;" class=".face_btn_ btn-facebook dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right"> 
+                        <div style="color:#fff" class="username hidden-xs">John Doe</div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right with-arrow">
 
                         <!-- User dropdown menu -->
                         <ul class="head-list">
                             <li>
-                                <a href="#"> <i class="fa fa-user fa-fw fa-lg"></i> Profile </a>
+                                <a href="#"> <i class="fa fa-user fa-fw fa-lg"></i> Особистий кабінет </a>
                             </li>
                             <li>
-                                <a href="#"> <i class="fa fa-envelope fa-fw fa-lg"></i> Messages </a>
+                                <a href="#"> <i class="fa fa-envelope fa-fw fa-lg"></i> Повідомлення </a>
                             </li>
+                            
                             <li>
-                                <a href="#">  <i class="fa fa-gear fa-fw fa-lg"></i> Settings </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-sign-out fa-fw"></i> Logout </a>
+                                <a href="#"> <i class="fa fa-sign-out fa-fw"></i> Вийти </a>
                             </li>
                         </ul>
                     </div>

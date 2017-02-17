@@ -47,9 +47,10 @@ class MainController extends Controller
         ->get();
         //page
     $data_content['title']="Industry";
+        $path='main_page';
         $data['keywords']="Фрилансим по крупному";
         $data['description']="Фрилансим по крупному";
-       return Display_lib::index($data,$data_nav,$data_content);
+       return Display_lib::index($path,$data,$data_nav,$data_content);
     }
 
     public function ajax_usersessions(Request $request)

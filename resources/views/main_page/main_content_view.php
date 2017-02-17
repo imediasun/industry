@@ -34,7 +34,7 @@
             <div id="page-content">
 
                 <div class="row">
-                <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Акционный товар</h3></div>
+                <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Акційний товар</h3></div>
 
 
                     <?

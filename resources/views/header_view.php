@@ -112,7 +112,7 @@
                 <!--Notification dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <li class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i class="fa fa-bell fa-lg"></i> <span class="badge badge-header badge-danger">5</span> </a>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <i  class="fa fa-bell fa-lg"></i> <span  class="badge badge-header badge-danger">5</span> </a>
 
                     <!--Notification dropdown menu-->
                     <div class="dropdown-menu dropdown-menu-md with-arrow">
@@ -126,7 +126,7 @@
                                     <!-- Dropdown list-->
                                     <li>
                                         <a href="#" class="media">
-                                            <div class="media-left"> <span class="icon-wrap icon-circle bg-primary"> <i class="fa fa-comment fa-lg"></i> </span> </div>
+                                            <div class="media-left"> <span class="icon-wrap icon-circle bg-primary"> <i  class="fa fa-comment fa-lg"></i> </span> </div>
                                             <div class="media-body">
                                                 <div class="text-nowrap">New comments waiting approval</div>
                                                 <small class="text-muted">15 minutes ago</small> </div>
@@ -187,7 +187,7 @@
                 <!--Messages Dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <li  class="a_drop dropdown">
-                    <a href="#"  data-toggle="dropdown" class=" dropdown-toggle"> <i style="" class="a_drop fa fa-shopping-cart fa-3x "></i> <span class="badge badge-header badge-warning">9</span> </a>
+                    <a href="#"  data-toggle="dropdown" class=" dropdown-toggle"> <i  class="a_drop fa fa-shopping-cart fa-3x "></i> <span class="badge badge-header badge-warning">9</span> </a>
 
                     <!--Message dropdown menu-->
                     <div  class="dropdown-menu dropdown-menu-md with-arrow">
@@ -276,12 +276,49 @@
 
 
 
-            <ul style="top:50px;position:relative;left:70px" class=" nav navbar-top-links pull-right">
+            <ul style="top:150px;position:absolute;left:110px" class=" nav navbar-top-links pull-left">
 
                 
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End message dropdown-->
+                <li style="position:relative;left:23px;">
+                    
+                    <div  style="position:relative;margin-left:-20px;width:550px" class="brand-title"> <span style="position:relative;left:-20px;font-size:19px;display:inline-block;float:left" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span> 
+                    <a style="display:inline-block;float:left" class="btn btn-social-icon btn-twitter">
+                        <span class="fa fa-twitter"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-facebook">
+                        <span class="fa fa-facebook"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-google">
+                        <span class="fa fa-google"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-pinterest">
+                        <span class="fa fa-pinterest"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-vk">
+                        <span class="fa fa-vk"></span>
+                     </a>
+                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-linkedin">
+                        <span class="fa fa-linkedin"></span>
+                     </a>
 
+
+
+                        <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+                        <div style="color:#fff;z-index:9999;position:relative;display:inline-block;left:200px;top:-63px;float:right;" id="SkypeButton_Call_imediasun_1">
+                            <script type="text/javascript">
+                                Skype.ui({
+                                    "name": "chat",
+                                    "element": "SkypeButton_Call_imediasun_1",
+                                    "participants": ["imediasun"],
+                                    "imageSize": 32
+                                });
+                            </script>
+                        </div>
+
+                    </div>
+                </li>
 
 
             </ul>
@@ -300,7 +337,7 @@
 
 
 
-            <div class="container">
+            <div class="container cont_logo">
                 <div class="row">
                     <div class="col-xs-12">
 
@@ -383,28 +420,7 @@
 
             <ul style="margin-top:40px"class="nav navbar-top-links pull-right">
 
-                <li style="position:relative;left:-20px;">
-                    
-                    <div  style="position:relative;margin-left:-20px;width:550px" class="brand-title"> <span style="position:relative;left:-20px;font-size:19px;display:inline-block;float:left" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span> 
-                    <a style="display:inline-block;float:left" class="btn btn-social-icon btn-twitter">
-                        <span class="fa fa-twitter"></span>
-                     </a>
-                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-facebook">
-                        <span class="fa fa-facebook"></span>
-                     </a>
-                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-google">
-                        <span class="fa fa-google"></span>
-                     </a>
-                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-pinterest">
-                        <span class="fa fa-pinterest"></span>
-                     </a>
-                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-vk">
-                        <span class="fa fa-vk"></span>
-                     </a>
-                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-linkedin">
-                        <span class="fa fa-linkedin"></span>
-                     </a></div>
-                </li>
+                
 
                 <!--Language selector-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

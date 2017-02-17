@@ -4,7 +4,7 @@ html {
 }
 body {
 	background-color: #EEEEEE;
-	font-family: Roboto, 'Open Sans', Arial, sans-serif;
+	font-family: Arial, 'Open Sans', Arial, sans-serif;
 	font-size: 13px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -705,13 +705,15 @@ display:block
 }
 #mainnav-menu a {
 	display: block;
-	font-weight: 700;
+	
 	color: #fff;
 	padding: 12px 20px
 }
 #mainnav-menu>li {
+	clear:both;
 	-webkit-transition: background-color .5s linear .5s;
-	transition: background-color .5s linear .5s
+	transition: background-color .5s linear .5s;
+font-size:18px;
 }
 #mainnav-menu>li>a:hover, #mainnav-menu>li>a:active {
 	color: #fff;
@@ -1353,6 +1355,7 @@ display:block
 #mainnav-menu a {
 	-webkit-transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 	transition: background-color 0.5s, color 0.5s, box-shadow 0.5s
+    
 }
 #mainnav-menu ul a, .menu-popover .sub-menu ul a {
 	-webkit-transition: background-color 0.2s, padding-left 0.3s, box-shadow 0.4s;
@@ -1391,6 +1394,7 @@ display:block
 	-webkit-transition: all 1.5s ease 0.3s, color 0.3s;
 	transition: all 1.5s ease 0.3s, color 0.3s;
 	transition-timing-function: cubic-bezier(.28, 1.02, .36, 1.145)
+
 }
 .mainnav-sm #mainnav-menu .list-header,
 .mainnav-sm #mainnav-menu .list-divider,

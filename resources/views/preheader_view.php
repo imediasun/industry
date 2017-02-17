@@ -58,13 +58,42 @@
     <link href="/css/bootstrap-social.css" rel="stylesheet">
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="/jasmine/plugins/pace/pace.min.css" rel="stylesheet">
+
     <link href="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="https://dl.dropboxusercontent.com/u/1499732/flexbox-grid/flexboxgrid.min.css" rel="stylesheet">
 
+
     <script src="/jasmine/plugins/pace/pace.min.js"></script>
     <script
-        src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.min.js"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="/css/slider-pro.min.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/css/examples.css" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="/js/jquery.sliderPro.min.js"></script>
+
+    <script type="text/javascript">
+        $( document ).ready(function( $ ) {
+            $( '#example3' ).sliderPro({
+                width: 960,
+                height: 500,
+                fade: true,
+                arrows: true,
+                buttons: false,
+                fullScreen: true,
+                shuffle: true,
+                smallSize: 500,
+                mediumSize: 1000,
+                largeSize: 3000,
+                thumbnailArrows: true,
+                autoplay: false
+            });
+        });
+    </script>
 </head>
 
 <body>

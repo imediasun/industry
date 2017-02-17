@@ -102,7 +102,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 background:#fff;
 height:100px;
 }
-.owl-carousel.owl-loaded{
-  margin-left:-60px;
-  margin-top:30px;
+.cont_logo{
+  left:-60px;
+  position:relative;
+  top:30px;
 }

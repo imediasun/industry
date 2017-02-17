@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Http\Controllers\MenuController
+use App\Http\Controllers\MenuController;
 class AdminController extends Controller
 {
 
@@ -42,9 +42,9 @@ class AdminController extends Controller
 
         $data_nav['menu']=$this->menu();
         $path='admin_page/add_good';
-        $data['title']="Фрилансим по крупному";
-        $data['keywords']="Фрилансим по крупному";
-        $data['description']="Фрилансим по крупному";
+        $data['title']="Додати товар";
+        $data['keywords']="Ukrainian industry platform";
+        $data['description']="Ukrainian industry platform";
         return \App\Http\Libraries\Display_lib::admin($path,$data,$data_nav);
     }
     public function ajax_usersessions(Request $request)

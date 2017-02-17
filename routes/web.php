@@ -19,8 +19,9 @@ Route::get('/admin/add_good', 'AdminController@add_good');
 });*/
 
 Auth::routes();
-
+Route::post('/functions_images', 'FunctionsController@index');
 Route::get('/home', 'HomeController@index');
+Route::get('/good/{id}', 'GoodController@index')->where('id', '[0-9]+');
 Route::get('/category/{id}', 'CategoryController@index')->where('id', '[0-9]+');
 Route::post('/MainController/ajax_usersessions', 'MainController@ajax_usersessions');
 
