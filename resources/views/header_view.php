@@ -283,7 +283,7 @@
                 <!--End message dropdown-->
                 <li style="position:relative;left:23px;">
                     
-                    <div  style="position:relative;margin-left:-20px;width:550px" class="brand-title"> <span style="position:relative;left:-20px;font-size:19px;display:inline-block;float:left" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span> 
+                    <div  style="position:relative;margin-left:-20px;width:550px" class="brand-title"> <span style="position:relative;left:-20px;font-size:14px;display:inline-block;float:left" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span>
                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-twitter">
                         <span class="fa fa-twitter"></span>
                      </a>
@@ -457,9 +457,9 @@
 
                 <!--User dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <li id="dropdown-user" style="margin-left:5px;" class=".face_btn_ btn-facebook dropdown">
+                <li id="dropdown-user" style="margin-left:5px;" class="face_btn_ btn-facebook dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right"> 
-                        <div style="color:#fff" class="username hidden-xs">John Doe</div>
+                        <span style="color:#fff" class="username hidden-xs">John Doe</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right with-arrow">
 

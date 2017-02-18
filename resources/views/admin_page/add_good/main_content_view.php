@@ -161,7 +161,7 @@
                                             <div id="leftpanel">
                                                 <div id="actions">
 
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    
                                                     <input type="hidden" name="lwidth" value="<?=$image_width?>">
                                                     <input type="hidden" name="lheight" value="<?=$image_height?>">
                                                     <input type="hidden" name="lproducers" value="/upload">
@@ -176,12 +176,7 @@
                                     </div>
 
                                     <script>
-                                        $.ajaxSetup({
-                                            headers:{
-                                                'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-                                            }
 
-                                        })
 
 
 

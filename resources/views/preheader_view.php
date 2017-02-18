@@ -54,7 +54,7 @@
     <!--SCRIPT-->
     <!--=================================================-->
     <link href="/css/logoslider.css" rel="stylesheet">
-    <link href="/css/style_main_page.css" rel="stylesheet">
+
     <link href="/css/bootstrap-social.css" rel="stylesheet">
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="/jasmine/plugins/pace/pace.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@
     <link rel="stylesheet" type="text/css" href="/css/slider-pro.min.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="/css/examples.css" media="screen"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-
+    <link href="/css/style_main_page.css" rel="stylesheet">
     <script type="text/javascript" src="/js/jquery.sliderPro.min.js"></script>
 
     <script type="text/javascript">

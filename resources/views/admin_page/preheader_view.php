@@ -65,7 +65,7 @@
 
     <script src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.min.js"></script>
 
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    
 
 </head>
 

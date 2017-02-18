@@ -30,7 +30,7 @@ padding-left:380px;
 	height:300px;
 }
 .mar-hor{
-
+margin-left:0px;
 
 }
 .articul{margin-top:-40px;}
@@ -44,10 +44,31 @@ text-align:center;
 .owl-carousel .owl-stage-outer{
 
 	top:10px;
+	
 }
+.owl-carousel{width:79%;}
 .cont_logo{
 
 	position:absolute;
 	top:30px;
 	left:0px;
+}
+.navbar-top-links > li > a
+{
+	margin-top:40px;
+	height:10px;
+}
+.username{
+height:20px;
+line-height:20px; 
+}
+.pageheader h3, .vertical_text{
+	color: #CBC7C7;
+	font-size:18px;
+}
+
+.pageheader .fa, .pageheader .glyphicon {
+
+    border: 2px solid #CBC7C7;
+
 }
