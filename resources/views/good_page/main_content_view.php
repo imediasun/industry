@@ -243,7 +243,29 @@
                                     <i class="fa fa-youtube" aria-hidden="true"></i>
 
  Дивитись товар на Youtube
-                            </a></div>
+                            </a>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading ui-sortable-handle">
+                                <div class="panel-control">
+                                    <button class="btn btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></button>
+                                    <button class="btn btn-default" data-click="panel-reload"><i class="fa fa-refresh"></i></button>
+                                    <button class="btn btn-default" data-click="panel-collapse"><i class="fa fa-chevron-down"></i></button>
+                                    <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button>
+                                </div>
+                                <h3 class="panel-title">Запитання</h3>
+                            </div>
+                            <div class="panel-body" style="display: block;">
+                                <blockquote>
+                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. </p>
+                                    <small>Someone famous <cite>Source Title</cite></small>
+                                </blockquote>
+                                <blockquote class="blockquote-reverse">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <footer>Someone famous in <cite>Source Title</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-4">
 
