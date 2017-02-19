@@ -186,8 +186,8 @@
                 <!--End notifications dropdown-->
                 <!--Messages Dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <li  class="a_drop dropdown">
-                    <a href="#"  data-toggle="dropdown" class=" dropdown-toggle"> <i  class="a_drop fa fa-shopping-cart fa-3x "></i> <span class="badge badge-header badge-warning">9</span> </a>
+                <li  style="margin-top:-4px" class="a_drop dropdown">
+                    <a href="#"  data-toggle="dropdown" class=" dropdown-toggle"> <i  style="font-size:24px" class="a_drop fa fa-shopping-cart fa-3x "></i> <span class="badge badge-header badge-warning">9</span> </a>
 
                     <!--Message dropdown menu-->
                     <div  class="dropdown-menu dropdown-menu-md with-arrow">
@@ -281,14 +281,14 @@
                 
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End message dropdown-->
-                <li style="position:relative;left:23px;">
+                <li style="position:relative;left:123px;">
                     
                     <div  style="position:relative;margin-left:-20px;width:550px" class="brand-title"> <span style="position:relative;left:-20px;font-size:14px;display:inline-block;float:left" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span>
                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-twitter">
                         <span class="fa fa-twitter"></span>
                      </a>
-                     <a style="display:inline-block;float:left" class="btn btn-social-icon btn-facebook">
-                        <span class="fa fa-facebook"></span>
+                     <a style="display:inline-block;float:left;" class="btn btn-social-icon btn-facebook">
+                        <span style="font-size:13px;" class="fa fa-facebook"></span>
                      </a>
                      <a style="display:inline-block;float:left" class="btn btn-social-icon btn-google">
                         <span class="fa fa-google"></span>
@@ -306,7 +306,7 @@
 
 
                         <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
-                        <div style="color:#fff;z-index:9999;position:relative;display:inline-block;left:200px;top:-63px;float:right;" id="SkypeButton_Call_imediasun_1">
+                        <div style="color:#fff;z-index:9999;position:relative;display:inline-block;left:200px;top:-33px;float:right;" id="SkypeButton_Call_imediasun_1">
                             <script type="text/javascript">
                                 Skype.ui({
                                     "name": "chat",

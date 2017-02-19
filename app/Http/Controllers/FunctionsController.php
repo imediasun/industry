@@ -13,9 +13,9 @@ class FunctionsController extends Controller
     public function index(Request $request){
 
 
-       if ($request->ajax()) {
-            dump($request->input());
-           
+        if(!empty($_FILES)) {
+
+            print_r($_FILES);
         }
     }
 }

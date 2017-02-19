@@ -8,11 +8,11 @@
         <div id="mainnav-menu-wrap">
             <div class="nano">
                 <div class="nano-content">
-                    <div style="border:2px solid #fff;height:50px;color:#fff">
-                        <h3 style="padding-left:10px;margin-top:10px;">Категоріі</h3>
+                    <div style="height:50px;color:#fff">
+                        <h3 style="padding-left:20px;margin-top:10px;">Категоріі</h3>
 
                     </div>
-                    <ul id="mainnav-menu" class="list-group" style="background:#002e6a">
+                    <ul id="mainnav-menu" class="list-group" style="">
 
 
                         <?

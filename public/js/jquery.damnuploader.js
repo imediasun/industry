@@ -276,7 +276,8 @@
 
                 var filename = item.replaceName || item.file.name;
                 xhr.open("POST", url);
-
+                xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                 if ($.support.fileSending) {
 				alert(item.file)
                     // W3C (Chrome, Safari, Firefox 4+)
