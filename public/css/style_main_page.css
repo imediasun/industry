@@ -98,10 +98,10 @@ margin-top:7px;
 border-bottom:1px solid #fff;
 }
 #mainnav {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#002e6a+0,ffffff+100 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#002e6a+0,ededed+100 */
 background: #002e6a; /* Old browsers */
-background: -moz-linear-gradient(left,  #002e6a 0%, #ffffff 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #002e6a 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #002e6a 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002e6a', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+background: -moz-linear-gradient(left,  #002e6a 0%, #ededed 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #002e6a 0%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #002e6a 0%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002e6a', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
 }
