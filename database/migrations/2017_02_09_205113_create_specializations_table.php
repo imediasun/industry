@@ -16,7 +16,8 @@ class CreateSpecializationsTable extends Migration
         Schema::create('specializations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('filter');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

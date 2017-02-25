@@ -44,28 +44,26 @@
 
     <!--Demo [ DEMONSTRATION ]-->
     <link href="/jasmine/css/demo/jasmine.css" rel="stylesheet">
+    <!--jQuery [ REQUIRED ]-->
+    <script src="/jasmine/js/jquery-2.1.1.min.js"></script>
 
-    <link rel="stylesheet" href="/css/style_admin.css" type="text/css" media="screen, projection" />
     <!--SCRIPT-->
     <!--=================================================-->
 
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="/jasmine/plugins/pace/pace.min.css" rel="stylesheet">
-    <!--jQuery [ REQUIRED ]-->
-    <script src="/jasmine/js/jquery-2.1.1.min.js"></script>
-    
-    <script type="text/javascript" src="/js/jquery.damnuploader.js"></script>
-    
     <script src="/jasmine/plugins/pace/pace.min.js"></script>
+
     <link href="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="https://dl.dropboxusercontent.com/u/1499732/flexbox-grid/flexboxgrid.min.css" rel="stylesheet">
     <link href="/css/logoslider.css" rel="stylesheet">
-    <link href="/css/style_admin_page.css" rel="stylesheet">
+    <link href="/css/style_admin.css" rel="stylesheet">
     <link href="/css/bootstrap-social.css" rel="stylesheet">
-
     <script src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.damnuploader.js"></script>
 
-    
+
+
 
 </head>
 

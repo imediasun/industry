@@ -321,79 +321,6 @@
 
 
 
-            <div class="container cont_logo">
-                <div class="row">
-                    <div class="col-xs-12">
-
-                        <div class="owl-carousel">
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/adidas.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/budweiser.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/burger-king.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/chipotle.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/dunkin-donuts.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/ford.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/klondike.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nike.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/nissan.png">
-                            </div>
-                            <div class="owl-carousel--item">
-                                <img src="https://dl.dropboxusercontent.com/u/1499732/owl-carousel/logos/samsung.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <!--End Navigation logo slider-->
-            <script>
-                // set variable used for events
-                var owl = $(".owl-carousel");
-
-                // initialize
-                owl.owlCarousel({
-                    items: 5,
-                    margin: 10,
-                    loop: true,
-                    center: true,
-                    mouseDrag: true,
-                    touchDrag: true,
-                    nav: false,
-                    dots: false,
-                    lazyLoad: true,
-                    autoplay: true,
-                    autoplayTimeout: 7000,
-                    autoplayHoverPause: true
-                });
-
-                // set up keypress events
-                $(document).keydown(function(e) {
-                    if (e.keyCode === 37) {
-                        owl.trigger('prev.owl.carousel');
-                    } else if (e.keyCode === 39) {
-                        owl.trigger('next.owl.carousel');
-                    }
-                });
-            </script>
-
-
 
 
 
@@ -442,25 +369,42 @@
                 <!--User dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <li id="dropdown-user" style="margin-left:5px;" class=".face_btn_ btn-facebook dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right"> 
-                        <div style="color:#fff" class="username hidden-xs">John Doe</div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right with-arrow">
 
-                        <!-- User dropdown menu -->
-                        <ul class="head-list">
-                            <li>
-                                <a href="#"> <i class="fa fa-user fa-fw fa-lg"></i> Особистий кабінет </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-envelope fa-fw fa-lg"></i> Повідомлення </a>
-                            </li>
-                            
-                            <li>
-                                <a href="#"> <i class="fa fa-sign-out fa-fw"></i> Вийти </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php if(Auth::user()->name){
+                      ?>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                            <div style="color:#fff" class="username hidden-xs"><?php echo Auth::user()->name?></div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right with-arrow">
+
+                            <!-- User dropdown menu -->
+                            <ul class="head-list">
+                                <li>
+                                    <a href="#"> <i class="fa fa-user fa-fw fa-lg"></i> Особистий кабінет </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-envelope fa-fw fa-lg"></i> Повідомлення </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ url('/logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Вийти
+                                    </a>
+
+                                    <form id="logout-form" action="<?php echo url('/logout') ?>" method="POST" style="display: none;">
+                                        <?php echo csrf_field() ?>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+
+                      <?
+
+                    }?>
+
+
                 </li>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End user dropdown-->

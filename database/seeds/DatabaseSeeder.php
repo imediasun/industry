@@ -12,6 +12,75 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+        DB::table('roles')->insert([
+
+            [
+
+                'name' => 'Admin',
+
+            ],
+            [
+
+                'name' => 'Moderator',
+
+            ],
+            [
+
+                'name' => 'Guest',
+
+            ],
+
+        ]);
+
+
+        DB::table('role_user')->insert([
+
+            [
+
+                'user_id' => 1,
+                'role_id' => 1
+
+            ]
+
+
+        ]);
+        DB::table('permissions')->insert([
+
+            [
+
+                'name' => 'VIEW_ADMIN',
+
+            ],
+            [
+
+                'name' => 'ADMIN_USERS',
+
+            ]
+
+        ]);
+        DB::table('permission_role')->insert([
+
+            [
+
+                'role_id' => 1,
+                'permission_id' => 1,
+
+            ],
+            [
+
+                'role_id' => 1,
+                'permission_id' => 2,
+
+            ],
+            [
+
+                'role_id' => 2,
+                'permission_id' => 1,
+
+            ]
+
+        ]);
         DB::table('categories')->insert([
 
             [
@@ -59,25 +128,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        DB::table('type_of_goods')->insert([
 
-            [
 
-                'name' => 'Акціонний товар',
-
-            ],
-            [
-
-                'name' => 'Оптовий товар',
-
-            ],
-            [
-
-                'name' => 'Роздрібний товар',
-
-            ],
-
-        ]);
 
         DB::table('goods')->insert([
 
@@ -273,9 +325,9 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'parent_id' => 1,
-                'name' => 'Реєстрація',
+                'name' => 'Управління користувачами',
                 'icon'=> 'fa-registered',
-                'link'=> '/admin/customers_registration'
+                'link'=> '/admin/customers_managment'
             ],
             [
                 'parent_id' => 0,
@@ -287,6 +339,11 @@ class DatabaseSeeder extends Seeder
                 'parent_id' => 3,
                 'name' => 'Додати товар',
                 'icon'=> 'fa-envelope','link'=> '/admin/add_good'
+            ],
+            [
+                'parent_id' => 3,
+                'name' => 'Додати Категорію',
+                'icon'=> 'fa-envelope','link'=> '/admin/add_category'
             ],
             [
                 'parent_id' => 0,
@@ -306,7 +363,17 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Партнери',
                 'icon'=> 'fa-thumbs-o-up',
                 'link'=> '/admin'
-            ]
+            ],
+            [
+                'parent_id' => 8,
+                'name' => 'Додати логотипи',
+                'icon'=> 'fa-envelope','link'=> '/admin/add_logos'
+            ],
+            [
+                'parent_id' => 8,
+                'name' => 'Видалити логотипи',
+                'icon'=> 'fa-envelope','link'=> '/admin/del_logos'
+            ],
         ]);
     }
 }

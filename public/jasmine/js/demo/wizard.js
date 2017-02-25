@@ -12,6 +12,7 @@ $(function () {
         onFinished: function () {
             // do anything here ;)
             alert("finished!");
+            $('#wizard_btn').click();
         }
     });
 
@@ -73,12 +74,19 @@ $(function () {
         },
         onFinishing: function (event, currentIndex, newIndex) {
             // revalidate the whole form
-            return $(this).parsley().validate();
+            $(this).parsley().validate();
+            $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+                }
+            })
+            $('#wizard-validate').submit()
         },
         onFinished: function () {
             // yayyy! all validation is pass.. now we can send data to server
             // or display message ;)
-            alert("submitted!");
+           /* alert("submitted!");*/
+
         }
     });
 });

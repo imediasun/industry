@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin-top:100px">
+<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -53,10 +53,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-                                <a class="btn btn-primary" href="{{ route('facebook.login') }}">
-                                    Facebook Login
-                                </a>
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
+
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
                             </div>

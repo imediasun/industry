@@ -6,7 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use DB;
 class RegisterController extends Controller
 {
     /*
@@ -14,7 +14,7 @@ class RegisterController extends Controller
     | Register Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the customers_registration of new users as well as their
+    | This controller handles the customers_managment of new users as well as their
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
@@ -23,7 +23,7 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after customers_registration.
+     * Where to redirect users after customers_managment.
      *
      * @var string
      */
@@ -40,7 +40,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming customers_registration request.
+     * Get a validator for an incoming customers_managment request.
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
@@ -55,17 +55,39 @@ class RegisterController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid customers_registration.
+     * Create a new user instance after a valid customers_managment.
      *
      * @param  array  $data
      * @return User
      */
     protected function create(array $data)
     {
-        return User::create([
+
+
+
+       $userCreate=  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+
+
+        $data_user = User::all();
+        $last_data_object = collect($data_user)->last();
+
+        $role_user_set=[
+            'id' => NULL,
+            'user_id'  => $last_data_object['original']['id'],
+            'role_id'=> 3
+
+        ];
+        DB::table('role_user')->insert($role_user_set);
+        /*$this->mail();*/
+        return $userCreate;
+    }
+
+    private function mail(){
+        dd('mail');
     }
 }

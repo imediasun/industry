@@ -12,7 +12,7 @@
                 <span class="brand-text">UKRAINIAN INDUSTRY</span> </div>
                 <div class="brand-title"> <span class="brand-text">PLATFORM</span> </div>
                 <div class="brand-title"> <span class="brand-text">MCV</span> </div>
-                <div  class="brand-title"> <span style="font-size:19px;" class="brand-text">Українська промислова платформа</span> </div>
+                <div  class="brand-title"> <span style="" class="brand-text_min">Українська промислова платформа</span> </div>
             </a>
         </div>
         <!--================================-->
@@ -281,10 +281,10 @@
                 
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End message dropdown-->
-                <li style="position:relative;left:123px;">
+                <li class="" style="">
                     
-                    <div  style="position:relative;margin-left:-20px;width:550px" class="brand-title"> <span style="position:relative;left:-20px;font-size:14px;display:inline-block;float:left" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span>
-                    <a style="display:inline-block;float:left" class="btn btn-social-icon btn-twitter">
+                    <div  style="" class="we_in_social"> <span class="we_in_social_text" style="display:inline-block;float:left;margin-top:10px;" class="brand-text">МИ В СОЦІАЛЬНИХ МЕРЕЖАХ      </span>
+                    <a style="display:inline-block;float:left;margin-left:20px" class="btn btn-social-icon btn-twitter">
                         <span class="fa fa-twitter"></span>
                      </a>
                      <a style="display:inline-block;float:left;" class="btn btn-social-icon btn-facebook">
@@ -306,7 +306,7 @@
 
 
                         <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
-                        <div style="color:#fff;z-index:9999;position:relative;display:inline-block;left:200px;top:-33px;float:right;" id="SkypeButton_Call_imediasun_1">
+                        <div style="" id="SkypeButton_Call_imediasun_1">
                             <script type="text/javascript">
                                 Skype.ui({
                                     "name": "chat",
@@ -425,14 +425,15 @@
                 <!--Language selector-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <li class=" btn-facebook dropdown">
-                    <a id="demo-lang-switch" class=" lang-selector dropdown-toggle" href="#" data-toggle="dropdown"> <span class="lang-selected">  <span class="lang-id">EN</span> <span style="color:#fff" class="face_btn_ lang-name">English</span> </span>
+                    <a id="demo-lang-switch" class=" lang-selector dropdown-toggle" href="#" data-toggle="dropdown"> <span class="lang-selected">  <span class="lang-id">EN</span> <span style="color:#fff" class="face_btn_ lang-name">ENG</span> </span>
                     </a>
 
                     <!--Language selector menu-->
                     <ul class="head-list dropdown-menu with-arrow">
                         <li>
                             <!--English-->
-                            <a href="#" class="active"> <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English"> <span class="lang-id">EN</span> <span class="lang-name">EN</span> </a>
+                            <a href="#" class="active">
+                                <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English"> <span class="lang-id">EN</span> <span class="lang-name">EN</span> </a>
                         </li>
                         <li>
                             <!--France-->
@@ -458,8 +459,31 @@
                 <!--User dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <li id="dropdown-user" style="margin-left:5px;" class="face_btn_ btn-facebook dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right"> 
-                        <span style="color:#fff" class="username hidden-xs">John Doe</span>
+
+                       <?php
+                            if(!Auth::guest()){
+
+                            ?>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                            <span style="color:#fff" class="username hidden-xs">
+                            <?
+                            echo (Illuminate\Support\Facades\Auth::user()->name);
+                            ?>
+                            </span></a>
+                            <?
+                            }
+                            if(Auth::guest()){
+                            ?>
+
+                            <a href="<?php echo route('login') ?>" class="dropdown-toggle text-right">
+                            <span style="color:#fff" class="username hidden-xs">Логін</span></a>
+
+                            <a href="<?php echo route('register') ?>" class="dropdown-toggle text-right">
+                            <span style="color:#fff" class="username hidden-xs">Регістрація</span>
+                            </a>
+                            <?
+                            }
+                            ?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right with-arrow">
 
@@ -471,9 +495,17 @@
                             <li>
                                 <a href="#"> <i class="fa fa-envelope fa-fw fa-lg"></i> Повідомлення </a>
                             </li>
-                            
+
                             <li>
-                                <a href="#"> <i class="fa fa-sign-out fa-fw"></i> Вийти </a>
+                                <a href="{{ url('/logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Вийти
+                                </a>
+
+                                <form id="logout-form" action="<?php echo url('/logout') ?>" method="POST" style="display: none;">
+                                    <?php echo csrf_field() ?>
+                                </form>
                             </li>
                         </ul>
                     </div>

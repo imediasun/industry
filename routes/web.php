@@ -10,16 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::auth();
 Route::get('/', 'MainController@index');
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/customers_registration', 'AdminController@customers_registration');
+/*Route::get('/admin', 'AdminController@index');
+Route::get('/admin/customers_managment', 'AdminController@customers_managment');
 Route::get('/admin/add_good', 'AdminController@add_good');
+Route::get('/admin/add_logos', 'AdminController@add_logos');
+Route::get('/admin/del_good', 'AdminController@del_good');*/
 /*Route::get('/', function () {
     return view('index');
 });*/
 
 Auth::routes();
+
 Route::post('/functions_images', 'FunctionsController@index');
+Route::post('/functions_form', 'FunctionsController@form');
+
 Route::get('/home', 'HomeController@index');
 Route::get('/good/{id}', 'GoodController@index')->where('id', '[0-9]+');
 Route::get('/cabinet/{id}', 'PrivateCabinetController@index')->where('id', '[0-9]+');
@@ -31,3 +37,35 @@ Route::post('/MainController/ajax_usersessions', 'MainController@ajax_usersessio
 
 Route::get('auth/facebook', 'FacebookController@redirectToProvider')->name('facebook.login');
 Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
+Route::get('/logout',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);
+
+//admin
+Route::group(['prefix' => 'admin','middleware'=>['web','auth']],function(){
+       //admin
+
+    Route::get('/',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);
+    Route::post('/func_update_role', 'FunctionsController@role');
+    Route::resource('/add_good','Admin\GoodsController');
+    Route::resource('/customers_managment','Admin\CustomersController');
+});
+/*Route::get('sendmail','')*/
+Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

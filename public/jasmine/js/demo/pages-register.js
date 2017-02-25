@@ -16,7 +16,7 @@ $(document).ready(function() {
     // http://bootstrapvalidator.com/
     // =================================================================
 
-    $('#customers_registration').bootstrapValidator({
+    $('#customers_managment').bootstrapValidator({
         framework: 'bootstrap',
         fields: {
             firstName: {

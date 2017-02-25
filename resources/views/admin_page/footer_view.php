@@ -54,6 +54,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--JAVASCRIPT-->
+<!--=================================================-->
+
+
+
+
 <!--BootstrapJS [ RECOMMENDED ]-->
 <script src="/jasmine/js/bootstrap.min.js"></script>
 
@@ -89,13 +112,22 @@
 
 <!--Form Wizard [ SAMPLE ]-->
 <script src="/jasmine/js/demo/wizard.js"></script>
-
+<!--DataTables [ OPTIONAL ]-->
+<script src="/jasmine/plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="/jasmine/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+<script src="/jasmine/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
 <!--Demo script [ DEMONSTRATION ]-->
 <script src="/jasmine/js/demo/jasmine.js"></script>
 
 <!--Form Wizard [ SAMPLE ]-->
 <script src="/jasmine/js/demo/form-wizard.js"></script>
+<!--DataTables Sample [ SAMPLE ]-->
+<script src="/jasmine/js/demo/tables-datatables.js"></script>
 <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+
+
+
 
 
 </body>

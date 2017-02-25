@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> HomePage | Jasmine - Responsive admin template.</title>
-
+    <meta name="csrf-token" content="<?php echo csrf_token() ?>" />
     <!--STYLESHEET-->
     <!--=================================================-->
 

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Gate;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -26,4 +26,40 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function roles(){
+        return $this->belongsToMany('App\Role','role_user');
+    }
+
+    public function canDo($permission, $require = FALSE){
+        
+        if(is_array($permission)){
+        
+        }
+        else{
+            foreach($this->roles as $role){
+                foreach($role->perms as $perm){
+                    if(str_is($permission,$perm->name)){
+                        return TRUE;
+                    }
+                }
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

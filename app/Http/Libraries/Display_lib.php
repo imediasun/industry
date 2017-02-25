@@ -21,12 +21,14 @@ class Display_lib
     
     public static function admin($path,$data,$data_nav)
     {
-        $view=view('admin_page.preheader_view',$data)->render();
+       
+        session()->forget('file_name');
+        $view=view($path.'.preheader_view',$data)->render();
         $view.=view('admin_page.header_view')->render();
-        $view.=view($path.'.main_navigation_view',$data_nav)->render();
-        $view.=view('admin_page.add_good.main_content_view',$data)->render();
+        $view.=view('admin_page.main_navigation_view',$data_nav)->render();
+        $view.=view($path.'.main_content_view',$data)->render();
         /*$view.=view($path.'.main_aside_view',$data)->render();*/
-        $view.=view('admin_page.footer_view',$data)->render();
+        $view.=view($path.'.footer_view',$data)->render();
         return $view;
     }
 
