@@ -12,6 +12,27 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        
+        
+        DB::table('type_of_goods')->insert([
+
+            [
+
+                'name' => 'Акційний товар',
+
+            ],
+            [
+
+                'name' => 'Оптовий товар',
+
+            ],
+            [
+
+                'name' => 'Роздрібний товар',
+
+            ],
+
+        ]);
 
         DB::table('roles')->insert([
 
@@ -34,17 +55,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        DB::table('role_user')->insert([
-
-            [
-
-                'user_id' => 1,
-                'role_id' => 1
-
-            ]
-
-
-        ]);
+        
         DB::table('permissions')->insert([
 
             [
@@ -138,45 +149,55 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Глицесед - КМП таблетки 0.1 г №50',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/glicesed.jpg',
+                'image_small'=>'glicesed.jpg',
                 'price'=>42000000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 1,
                 'name' => 'Ливицитам 500 таблетки 500мг №60',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/livicitam.jpg',
+                'image_small'=>'livicitam.jpg',
                 'price'=>42000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 1,
                 'name' => 'Валерианы настойка 25мг',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/valeriana.jpg',
+                'image_small'=>'valeriana.jpg',
                 'price'=>42,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 1,
                 'name' => 'Когнум таблетки 250 мг №50',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/kognum.jpg',
+                'image_small'=>'kognum.jpg',
                 'price'=>420,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 1,
                 'name' => 'Новакаин дарница раствор для инъекций 0.5% 2мл №10',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/novakain.jpg',
+                'image_small'=>'novakain.jpg',
                 'price'=>4200,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
 
             ],
             [
@@ -184,9 +205,11 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Валеріана',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/glicesed.jpg',
+                'image_small'=>'glicesed.jpg',
                 'price'=>42000000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
 
 
@@ -198,45 +221,55 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Глицесед - КМП таблетки 0.1 г №50',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/glicesed.jpg',
+                'image_small'=>'glicesed.jpg',
                 'price'=>42000000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 2,
                 'name' => 'Ливицитам 500 таблетки 500мг №60',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/livicitam.jpg',
+                'image_small'=>'livicitam.jpg',
                 'price'=>42000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 2,
                 'name' => 'Валерианы настойка 25мг',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/valeriana.jpg',
+                'image_small'=>'valeriana.jpg',
                 'price'=>42,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 2,
                 'name' => 'Когнум таблетки 250 мг №50',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/kognum.jpg',
+                'image_small'=>'kognum.jpg',
                 'price'=>420,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 2,
                 'name' => 'Новакаин дарница раствор для инъекций 0.5% 2мл №10',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/novakain.jpg',
+                'image_small'=>'novakain.jpg',
                 'price'=>4200,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
 
             ],
             [
@@ -244,9 +277,11 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Валеріана',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/glicesed.jpg',
+                'image_small'=>'glicesed.jpg',
                 'price'=>42000000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
 
 
@@ -257,45 +292,55 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Глицесед - КМП таблетки 0.1 г №50',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/glicesed.jpg',
+                'image_small'=>'glicesed.jpg',
                 'price'=>42000000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 3,
                 'name' => 'Ливицитам 500 таблетки 500мг №60',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/livicitam.jpg',
+                'image_small'=>'livicitam.jpg',
                 'price'=>42000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 3,
                 'name' => 'Валерианы настойка 25мг',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/valeriana.jpg',
+                'image_small'=>'valeriana.jpg',
                 'price'=>42,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 3,
                 'name' => 'Когнум таблетки 250 мг №50',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/kognum.jpg',
+                'image_small'=>'kognum.jpg',
                 'price'=>420,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ],
             [
                 'type' => 3,
                 'name' => 'Новакаин дарница раствор для инъекций 0.5% 2мл №10',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/novakain.jpg',
+                'image_small'=>'novakain.jpg',
                 'price'=>4200,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
 
             ],
             [
@@ -303,9 +348,11 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Валеріана',
                 'category'=>3,
                 'articul'=>'11244234',
-                'photo'=>'/img/glicesed.jpg',
+                'image_small'=>'glicesed.jpg',
                 'price'=>42000000,
-                'star'=>true
+                'star'=>true,
+                'description'=>'',
+                'description2'=>''
             ]
 
 

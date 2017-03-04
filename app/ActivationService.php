@@ -5,13 +5,13 @@ namespace App;
 
 use Illuminate\Mail\Mailer;
 use Illuminate\Mail\Message;
-
-class ActivationService
+use App\ActivationRepository;
+class ActivationService 
 {
 
     protected $mailer;
 
-    protected $activationRepo;
+    public $activationRepo;
 
     protected $resendAfter = 24;
 

@@ -37,7 +37,7 @@
                                 <th class="min-tablet">Роль</th>
                                 <th class="min-tablet">Дата регестраціі</th>
                                 <th class="min-desktop">Видалити</th>
-
+                                <th class="min-desktop">Активацiя</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -45,14 +45,6 @@
                             <?php
 
                             foreach($users as $user){
-
-
-
-
-
-
-
-
                               ?>
                                 <tr>
                                     <td><?php echo $user['original']['name'];?></td>
@@ -83,7 +75,21 @@
 
                                     </td>
                                     <td><?php echo $user['original']['created_at'];?></td>
-                                    <td><button class="btn btn-danger btn-icon icon-lg fa fa-times"></button></td>
+                                    <td>
+                                        <input type="hidden" class="user_id" name="user_id" value="<?php echo $user['original']['id'];?>">
+                                        <button class="delete_btn btn btn-danger btn-icon icon-lg fa fa-times"></button></td>
+                                    <td>
+                                    <?php
+                                    if($user['original']['activated']==1){
+                                        echo 'Активован';
+
+                                    }
+                                    else{
+                                        echo 'Не активован';
+
+                                    }
+                                    ?>
+                                    </td>
 
                                 </tr>
 
@@ -136,6 +142,35 @@
                         alert(data); // show response from the php script.
                     }
                 });
+            });
+
+            $('.delete_btn').click(function(){
+
+                var txt;
+                var r = confirm("Видалити користувача ?");
+                if (r == true) {
+                    var user = $(this).parent('td').find('.user_id').val();
+
+                    $.ajax({
+                        type: "POST",
+                        dataType: 'json',
+                        url: '/admin/func_delete_user',
+                        data: {user: user}, // serializes the form's elements.
+                        success: function (data) {
+
+                            if (data == 'deleted') {
+                                alert('користувач видален'); // show response from the php script.}
+                            } else {
+                                alert('помилка !')
+                            }
+                            location.reload();
+                        }
+
+                    });
+                } else {
+                    txt = "Ви вибрали відмінити видалення";
+                }
+
             });
 
         </script>

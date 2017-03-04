@@ -13,8 +13,9 @@ namespace App\Http\Middleware ;
          */
         protected $except = [
 
-         'admin/customers_managment'
-        
+
+        'admin/customers_managment',
+            'cabinet'
         ];
 
       public function handle($request, Closure $next){

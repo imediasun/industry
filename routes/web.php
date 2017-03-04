@@ -24,6 +24,7 @@ Route::get('/admin/del_good', 'AdminController@del_good');*/
 Auth::routes();
 
 Route::post('/functions_images', 'FunctionsController@index');
+Route::post('/functions_image', 'FunctionsController@main_image');
 Route::post('/functions_form', 'FunctionsController@form');
 
 Route::get('/home', 'HomeController@index');
@@ -37,6 +38,13 @@ Route::post('/MainController/ajax_usersessions', 'MainController@ajax_usersessio
 
 Route::get('auth/facebook', 'FacebookController@redirectToProvider')->name('facebook.login');
 Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
+Route::get('/good_added', function () {
+    return view('good');
+})->name('good_added');
+Route::get('/not_yours', function () {
+    return view('not_yours');
+})->name('not_yours');
+
 Route::get('/logout',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);
 
 //admin
@@ -45,12 +53,13 @@ Route::group(['prefix' => 'admin','middleware'=>['web','auth']],function(){
 
     Route::get('/',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);
     Route::post('/func_update_role', 'FunctionsController@role');
+    Route::post('/func_delete_user', 'FunctionsController@delete_user');
     Route::resource('/add_good','Admin\GoodsController');
     Route::resource('/customers_managment','Admin\CustomersController');
 });
 /*Route::get('sendmail','')*/
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
-
+Route::get('/add_to_cart/{id}','ShopingCartController@addToCart')->name('add_to_cart');
 
 
 

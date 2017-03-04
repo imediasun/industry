@@ -25,56 +25,63 @@
             <!--===================================================-->
             <div style="position:relative;top:-40px" id="page-content">
 
-                <div class="row">
+            <div class="row">
                 <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Акційний товар</h3></div>
 
 
                     <?
+
                     $i=0;
                     foreach($goods['akcionniy'] as $key=>$val){
 
 
-                        if($i==0){
+
+
                         ?>
                         <div  class="col-md-2">
-                        <?
-                        }
-                        else{
-                        ?> 
-                         <div  class="col-md-2">          
-                        <?
-                        }
-
-                        ?>    <div class="panel">
+                            <div class="good_cont panel">
                                 <div class="panel-body np">
 
-                                    <div class="col-md-12 col-sm-12 pad-no">
-                                        <?
-                                        $stroka = iconv('UTF-8','windows-1251',$val['original']['name']); //Меняем кодировку на windows-1251
-
-                                        $stroka = substr($stroka ,0,27); //Обрезаем строку
-
-                                        $stroka = iconv('windows-1251','UTF-8',$stroka ); //Возвращаем кодировку в utf-8
+                                    <a href="/good/<?php echo $val['original']['id'];?>">
+                                    <div class="good_container col-md-12 col-sm-12 pad-no">
+                                    <?
+                                    /*
+                                    $stroka = iconv('UTF-8','windows-1251',$val['original']['name']); //Меняем кодировку на windows-1251
+                                    $stroka = substr($stroka ,0,27); //Обрезаем строку
+                                    $stroka = iconv('windows-1251','UTF-8',$stroka ); //Возвращаем кодировку в utf-8*/
                                 //Get first image from DB
 
-                                        $images=DB::table('photos')
+                                     /*   $images=DB::table('photos')
                                             ->where('id_good', $val['original']['id'])
                                             ->take(1)
                                             ->get();
-                                        echo "<pre>";
 
                                         foreach ($images as $image_)
                                         {
                                             $image=$image_->photo;
 
-                                        }echo "</pre>";
 
-                                        $webPdfPath = str_replace('./../../public', '', $_SERVER['DOCUMENT_ROOT']);
+                                        }*/
+
                                         ?>
-                                        <h5 class="name_good"><? echo $stroka;?></h5>
+                                        <h5 class="name_good"><? echo $val['original']['name'];?></h5>
 
+                                        <?php
+                                        $size = getimagesize('photos/'.$val['original']['image_small']);
+                                        if($size[1]>$size[0]){
+                                        ?>
+                                        <img style="height:125px;margin:0 auto;" src="/photos/<?php echo $val['original']['image_small'];?>">
+                                        <?
 
-                                        <img style="width:95%;margin:0 auto;" src="/photos/image2_large(0ba361af3779a5299ce4fb3d9f3704ec).jpg">
+                                        }
+                                        else{
+                                        ?>
+                                        <img style="width:95%;height:175px;margin:0 auto;" src="/photos/<?php echo $val['original']['image_small'];?>">
+                                        <?
+
+                                        }
+                                        ?>
+
 
                                         <p style="position:relative;top:10px;" class="articul mar-hor"><?='Артикул '.$val['original']['articul']?></p>
                                         
@@ -82,15 +89,16 @@
 
                                         $cetegory=DB::table('categories')
                                             ->where('id', $val['original']['category'])
-                                            ->get();    
-                                         echo $cetegory[0]->name;   ?></h5>
-                                        <p style="display:inline-block" class="mar-hor">ОПТ</p> <h5 style="display:inline-block" class="mar-hor">42млн грн.</h5> <i style="" class="fa_star_ fa fa-star fa-2x" aria-hidden="true"></i>
+                                            ->get();
+                                            if(isset($cetegory[0])){
+                                         echo $cetegory[0]->name;   }?></h5>
+                                        <p style="display:inline-block" class="mar-hor">ОПТ</p> <h5 style="display:inline-block" class="price mar-hor">42млн грн.</h5> <i style="" class="fa_star_ fa fa-star fa-2x" aria-hidden="true"></i>
 
                                         <!--================================-->
 
 
 
-                                    </div>
+                                    </div></a>
 
                                 </div>
                             </div>
@@ -98,57 +106,90 @@
 
 
 
-                        <?
-                        $i++;
+                    <?
+
                     }
                     ?>
                     
 
 
                   
-                </div>
+                    </div>
+
                 <div class="row">
                     <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Оптовий товар</h3></div>
 
 
                     <?
-                    $z=0;
+
+                    $i=0;
                     foreach($goods['optoviy'] as $key=>$val){
-                          if($z==0){
+
+
+
+
                         ?>
                         <div  class="col-md-2">
-                        <?
-                        }
-                        else{
-                        ?> 
-                         <div  class="col-md-2">          
-                        <?
-                        }
-
-                        ?>
-                        
-                            <div class="panel">
+                            <div class="good_cont panel">
                                 <div class="panel-body np">
 
-                                    <div class="col-md-12 col-sm-12 pad-no">
-                                        <h5 class=""><?=$val['original']['name']?></h5>
-                                        <img style="width:95%;margin:0 auto;" src="<?=$val['original']['photo']?>">
+                                    <a href="/good/<?php echo $val['original']['id'];?>">
+                                        <div class="good_container col-md-12 col-sm-12 pad-no">
+                                            <?
+                                            /*
+                                            $stroka = iconv('UTF-8','windows-1251',$val['original']['name']); //Меняем кодировку на windows-1251
+                                            $stroka = substr($stroka ,0,27); //Обрезаем строку
+                                            $stroka = iconv('windows-1251','UTF-8',$stroka ); //Возвращаем кодировку в utf-8*/
+                                            //Get first image from DB
 
-                                        <p style="position:relative;top:10px;" class="articul mar-hor"><?='Артикул '.$val['original']['articul']?></p>
-                                        
-                                        <h5 style="" class=""><?
+                                            /*   $images=DB::table('photos')
+                                                   ->where('id_good', $val['original']['id'])
+                                                   ->take(1)
+                                                   ->get();
 
-                                            $cetegory=DB::table('categories')
-                                                ->where('id', $val['original']['category'])
-                                                ->get();
-                                            echo $cetegory[0]->name;   ?></h5>
-                                        <p style="display:inline-block" class="mar-hor">ОПТ</p> <h5 style="display:inline-block" class="mar-hor">42млн грн.</h5> <i style="" class="fa_star_ fa fa-star fa-2x" aria-hidden="true"></i>
-
-                                        <!--================================-->
+                                               foreach ($images as $image_)
+                                               {
+                                                   $image=$image_->photo;
 
 
+                                               }*/
 
-                                    </div>
+                                            ?>
+                                            <h5 class="name_good"><? echo $val['original']['name'];?></h5>
+
+                                            <?php
+                                            $size = getimagesize('photos/'.$val['original']['image_small']);
+                                            if($size[1]>$size[0]){
+                                                ?>
+                                                <img style="height:125px;margin:0 auto;" src="/photos/<?php echo $val['original']['image_small'];?>">
+                                                <?
+
+                                            }
+                                            else{
+                                                ?>
+                                                <img style="width:95%;height:175px;margin:0 auto;" src="/photos/<?php echo $val['original']['image_small'];?>">
+                                                <?
+
+                                            }
+                                            ?>
+
+
+                                            <p style="position:relative;top:10px;" class="articul mar-hor"><?='Артикул '.$val['original']['articul']?></p>
+
+                                            <h5 style="display:block" class=""><?
+
+                                                $cetegory=DB::table('categories')
+                                                    ->where('id', $val['original']['category'])
+                                                    ->get();
+                                                if(isset($cetegory[0])){
+                                                    echo $cetegory[0]->name;   }?></h5>
+                                            <p style="display:inline-block" class="mar-hor">ОПТ</p> <h5 style="display:inline-block" class="price mar-hor">42млн грн.</h5> <i style="" class="fa_star_ fa fa-star fa-2x" aria-hidden="true"></i>
+
+                                            <!--================================-->
+
+
+
+                                        </div></a>
 
                                 </div>
                             </div>
@@ -157,7 +198,7 @@
 
 
                         <?
-                    $z++;
+
                     }
                     ?>
 
@@ -165,48 +206,81 @@
 
 
                 </div>
+
                 <div class="row">
                     <div class="col-md-1" style="height:auto;margin-left:-40px"><h3 class="vertical_text mar-hor">Роздрібний товар</h3></div>
 
 
                     <?
+
                     $i=0;
                     foreach($goods['rozdribniy'] as $key=>$val){
-                          if($i==0){
+
+
+
+
                         ?>
                         <div  class="col-md-2">
-                        <?
-                        }
-                        else{
-                        ?> 
-                         <div  class="col-md-2">          
-                        <?
-                        }
-
-                        ?>
-                        
-                            <div class="panel">
+                            <div class="good_cont panel">
                                 <div class="panel-body np">
 
-                                    <div class="col-md-12 col-sm-12 pad-no">
-                                        <h5 class=""><?=$val['original']['name']?></h5>
-                                        <img style="width:95%;margin:0 auto;" src="<?=$val['original']['photo']?>">
+                                    <a href="/good/<?php echo $val['original']['id'];?>">
+                                        <div class="good_container col-md-12 col-sm-12 pad-no">
+                                            <?
+                                            /*
+                                            $stroka = iconv('UTF-8','windows-1251',$val['original']['name']); //Меняем кодировку на windows-1251
+                                            $stroka = substr($stroka ,0,27); //Обрезаем строку
+                                            $stroka = iconv('windows-1251','UTF-8',$stroka ); //Возвращаем кодировку в utf-8*/
+                                            //Get first image from DB
 
-                                        <p style="position:relative;top:10px;" class="mar-hor"><?='Артикул '.$val['original']['articul']?></p>
-                                        
-                                        <h5 style="" class=""><?
+                                            /*   $images=DB::table('photos')
+                                                   ->where('id_good', $val['original']['id'])
+                                                   ->take(1)
+                                                   ->get();
 
-                                            $cetegory=DB::table('categories')
-                                                ->where('id', $val['original']['category'])
-                                                ->get();
-                                            echo $cetegory[0]->name;   ?></h5>
-                                        <p style="display:inline-block" class="mar-hor">ОПТ</p> <h5 style="display:inline-block" class="mar-hor">42млн грн.</h5> <i style="" class="fa_star_ fa fa-star fa-2x" aria-hidden="true"></i>
-
-                                        <!--================================-->
+                                               foreach ($images as $image_)
+                                               {
+                                                   $image=$image_->photo;
 
 
+                                               }*/
 
-                                    </div>
+                                            ?>
+                                            <h5 class="name_good"><? echo $val['original']['name'];?></h5>
+
+                                            <?php
+                                            $size = getimagesize('photos/'.$val['original']['image_small']);
+                                            if($size[1]>$size[0]){
+                                                ?>
+                                                <img style="height:125px;margin:0 auto;" src="/photos/<?php echo $val['original']['image_small'];?>">
+                                                <?
+
+                                            }
+                                            else{
+                                                ?>
+                                                <img style="width:95%;height:175px;margin:0 auto;" src="/photos/<?php echo $val['original']['image_small'];?>">
+                                                <?
+
+                                            }
+                                            ?>
+
+
+                                            <p style="position:relative;top:10px;" class="articul mar-hor"><?='Артикул '.$val['original']['articul']?></p>
+
+                                            <h5 style="display:block" class=""><?
+
+                                                $cetegory=DB::table('categories')
+                                                    ->where('id', $val['original']['category'])
+                                                    ->get();
+                                                if(isset($cetegory[0])){
+                                                    echo $cetegory[0]->name;   }?></h5>
+                                            <p style="display:inline-block" class="mar-hor">ОПТ</p> <h5 style="display:inline-block" class="price mar-hor">42млн грн.</h5> <i style="" class="fa_star_ fa fa-star fa-2x" aria-hidden="true"></i>
+
+                                            <!--================================-->
+
+
+
+                                        </div></a>
 
                                 </div>
                             </div>
@@ -215,7 +289,7 @@
 
 
                         <?
-                        $i++;
+
                     }
                     ?>
 
@@ -223,8 +297,58 @@
 
 
                 </div>
-            </div>
 
-
+    </div> 
+ 
 
 </div>
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+    if ($(window).width() < '1280') {
+    $('.name_good').each(function() {
+    var text = $( this ).text();
+    $( this ).text(text.substr(-132,17))
+    });
+
+    }
+    if ($(window).width() < '1366') {
+    $('.name_good').each(function() {
+    var text = $( this ).text();
+    $( this ).text(text.substr(-132,18))
+    });
+
+    }
+    if ($(window).width() < '1440') {
+    $('.name_good').each(function() {
+    var text = $( this ).text();
+    $( this ).text(text.substr(-132,21))
+    });
+
+    }
+    if ($(window).width() < '1600') {
+    $('.name_good').each(function() {
+    var text = $( this ).text();
+    $( this ).text(text.substr(-132,21))
+    });
+
+        }
+    if ($(window).width() <= '1920') {
+    $('.name_good').each(function() {
+    var text = $( this ).text();
+    $( this ).text(text.substr(-132,28))
+    });
+
+        }
+    });
+
+
+
+
+</script>

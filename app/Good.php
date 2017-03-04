@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
-class Good extends Authenticatable
+use Illuminate\Database\Eloquent\Model;
+class Good extends Model
 {
     use Notifiable;
 
@@ -17,7 +17,7 @@ class Good extends Authenticatable
     protected $fillable = [
        'facebook_id', 'name', 'email', 'password',
     ];
-
+    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -26,4 +26,6 @@ class Good extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
 }

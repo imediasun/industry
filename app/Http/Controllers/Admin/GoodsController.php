@@ -24,11 +24,12 @@ class GoodsController extends AdminController
      */
     public function index(){
         /*$this->user=Auth::user();*/
-
+        
         if(Gate::denies('VIEW_ADMIN')){
 
             abort(403);
         }
+
         $this->title = 'Панель администратора';
         $data['categories']=Category::orderBy('parent_id', 'asc')
             ->orderBy('created_at', 'desc')

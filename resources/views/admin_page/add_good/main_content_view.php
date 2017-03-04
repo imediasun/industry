@@ -1,197 +1,163 @@
-<div class="boxed">
 
-    <!--CONTENT CONTAINER-->
-    <!--===================================================-->
-    <div id="content-container">
 
-        <!--Page Title-->
-        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-        <div style= "margin-top:50px;" class="pageheader">
-            <h3><i class="fa fa-home"></i> Додати товар у базу данних </h3>
-            <div class="breadcrumb-wrapper"> <span class="label">Ви тут:</span>
-                <ol class="breadcrumb">
-                    <li> <a href="#"> Адміністративна сторінка </a> </li>
-                    <li class="active"> Додати товар </li>
-                </ol>
-            </div>
-        </div>
-        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-        <!--End page title-->
+    <div class="boxed">
 
-        <!--Page content-->
+        <!--CONTENT CONTAINER-->
         <!--===================================================-->
-        <div style="margin-top:-100px" id="page-content">
+        <div id="content-container">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <section class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Додати товар  </h3>
-                        </div>
-                        <div class="panel-body">
-                            <!-- START Form Wizard -->
-                            <form class="form-horizontal form-bordered" method="post" action="/functions_form" id="wizard-validate">
-                                <!-- Wizard Container 1 -->
-                                <div class="wizard-title"> Інформація о товарі </div>
-                                <div class="wizard-container">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <h5 class="semibold text-primary">
-                                                <i class="fa fa-sign-in"></i> Основна фнформація
-                                            </h5>
-                                            <p class="text-muted"> Інформація яка вноситься до бази данних </p>
+            <!--Page Title-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <div class="pageheader">
+                <h3><i class="fa fa-home"></i> Forms Wizard </h3>
+                <div class="breadcrumb-wrapper"> <span class="label">You are here:</span>
+                    <ol class="breadcrumb">
+                        <li> <a href="#"> Home </a> </li>
+                        <li class="active"> forms wizard </li>
+                    </ol>
+                </div>
+            </div>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End page title-->
+
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <section class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Form wizard with Validation </h3>
+                            </div>
+                            <div class="panel-body">
+                                <!-- START Form Wizard -->
+                                <form class="form-horizontal form-bordered" method="POST" action="/functions_form" id="wizard-validate">
+                                    <!-- Wizard Container 1 -->
+                                    <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
+                                    <div class="wizard-title">  Інформація о товарі</div>
+                                    <div class="wizard-container">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <h5 class="semibold text-primary">
+                                                    <i class="fa fa-sign-in"></i> Основна інформація о товарі
+                                                </h5>
+                                                <p class="text-muted"> Заповніть основну інформація о товарі </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label"> Назва товару : </label>
-                                        <div class="col-sm-6">
-                                            <input class="form-control" name="name" type="text" placeholder="Введить назву"  data-parsley-group="order" data-parsley-required />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label"> Назва товару : </label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" name="name" type="text" placeholder="Наберить назву товару"  data-parsley-group="order" data-parsley-required />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label"> Артикул : </label>
-                                        <div class="col-sm-6">
-                                            <input class="form-control" name="artikul" type="text" placeholder="Введить артикул" data-parsley-group="order" data-parsley-required />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label"> Артикул : </label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" name="artikul" type="text" placeholder="Наберить артикул товару" data-parsley-group="order" data-parsley-required />
+                                            </div>
                                         </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label"> Категорія : </label>
-                                        <div class="col-sm-6">
-
-                                            <select class="form-control" name="category" placeholder="Виберить категорію" />
-                                            <?
-                                            foreach($categories as $key=>$val){
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label"> Категорія : </label>
+                                            <div class="col-sm-6">
+                                                <select class="form-control" name="category" placeholder="Виберить категорію" />
+                                                <?php
+                                                foreach($categories as $key=>$val){
+                                                    ?>
+                                                    <option value="<?php echo $val['original']['id'];?>"><?php echo $val['original']['name'];?></option>
+                                                    <?
+                                                }
                                                 ?>
-                                                <option value="<?=$val['original']['id']?>"><?=$val['original']['name']?></option>
-                                                <?
-                                            }
-                                            ?>
 
-                                            </select>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label"> Тип : </label>
-                                        <div class="col-sm-6">
-                                            <select class="form-control" name="type" placeholder="Виберить тип товару" />
-                                            <?
-                                            foreach($types as $key=>$val){
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label"> Тип : </label>
+                                            <div class="col-sm-6">
+                                                <select class="form-control" name="type" placeholder="Виберить тип товару" />
+                                                <?php
+                                                foreach($types as $key=>$val){
+                                                    ?>
+                                                    <option value="<?php echo $val['original']['id'];?>"><?php echo $val['original']['name'];?></option>
+                                                    <?
+                                                }
                                                 ?>
-                                                <option value="<?=$val['original']['id']?>"><?=$val['original']['name']?></option>
-                                                <?
-                                            }
-                                            ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class=" form-group  ">
-                                        <label class="col-sm-2 control-label"> Ціна : </label>
-                                        <div class="col-sm-6 input-group mar-btm">
-                                            <span class="input-group-addon"><i class="fa fa-money fa-lg"></i></span>
-                                            <input class="form-control" type="text" data-parsley-group="order" data-parsley-required>
-                                            <span class="input-group-addon">.00</span>
-                                        </div>
 
-                                    </div>
-                                </div>
-                                <!--/ Wizard Container 1 -->
-                                <!-- Wizard Container 2 -->
-
-
-
-                                <!-- Wizard Container 4 -->
-                                <div class="wizard-title"> Відео товару </div>
-                                <div class="wizard-container">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <h4 class="semibold text-primary"> <i class="fa fa-cog"></i> Відео товару </h4>
-                                            <p class="text-muted"> Додайте посилання на відео з ютубу </p>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Відео1: </label>
-                                                <input type="text" name="video1" class="form-control" placeholder="Посилання на відео з Ютубу" />
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label> Відео2: </label>
-                                                <input type="text" name="video2" class="form-control" placeholder="Посилання на відео з Ютубу" />
+                                                </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label> Відео3: </label>
-                                                <input type="text" name="video3" class="form-control" placeholder="Посилання на відео з Ютубу" />
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label> Відео4: </label>
-                                                <input type="text" name="video4" class="form-control" placeholder="Посилання на відео з Ютубу" />
-                                            </div>
-                                            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
-
-
-
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-
-
-
-                                </div>
-                                <!-- Wizard Container 4 -->
-                                <!--/ Wizard Container 2 -->
-                                <!-- Wizard Container 3 -->
-                                <div class="wizard-title"> Опис характеристика товару </div>
-                                <div class="wizard-container">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <h5 class="semibold text-primary">
-                                                <i class="fa fa-book"></i> Опис товару
-                                            </h5>
-                                            <p class="text-muted"> Характеристика </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Опис товару: <span class="text-danger">*</span> </label>
-                                                <textarea name="editor1"></textarea>
-                                                <script>
-                                                    CKEDITOR.replace( 'editor1' );
-                                                </script>
+                                        <div class=" form-group  ">
+                                            <label class="col-sm-2 control-label"> Ціна : </label>
+                                            <div class="col-sm-6 input-group mar-btm">
+                                                <span class="input-group-addon"><i class="fa fa-dollar fa-lg"></i></span>
+                                                <input class="form-control" name="price" type="text" placeholder="Наберить ціну товару"  data-parsley-group="order" data-parsley-required >
+                                                <span class="input-group-addon">.00</span>
                                             </div>
 
                                         </div>
                                     </div>
-                                    
-                                    
-                                </div>
-                                <!--/ Wizard Container 3 -->
-                                <!-- Wizard Container 4 -->
-                                <div class="wizard-title"> Фотографіі товару </div>
-                                <div class="wizard-container">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <h5 class="semibold text-primary">
-                                                <i class="fa fa-cog"></i> Work experience
-                                            </h5>
-                                            <p class="text-muted"> Let us know about your work experience </p>
+                                    <!--/ Wizard Container 1 -->
+                                    <!-- Wizard Container 2 -->
+                                    <div class="wizard-title"> Опис характеристика товару </div>
+                                    <div class="wizard-container">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <h4 class="semibold text-primary"> <i class="fa fa-user"></i> Опис товару </h4>
+                                                <p class="text-muted"> Характеристика </p>
+                                            </div>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Опис товару: <span class="text-danger">*</span> </label>
+                                                    <textarea name="editor1"></textarea>
+                                                    <script>
+                                                        CKEDITOR.replace( 'editor1' );
+                                                    </script>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Особливі умови придбання: <span class="text-danger">*</span> </label>
+                                                    <textarea name="editor2"></textarea>
+                                                    <script>
+                                                        CKEDITOR.replace( 'editor2' );
+                                                    </script>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <h4 class="semibold text-primary"> <i class="fa fa-cog"></i> Відео товару </h4>
+                                                <p class="text-muted"> Додайте посилання на відео з ютубу </p>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Відео1: </label>
+                                                    <input type="text" name="video1" class="form-control" placeholder="Посилання на відео з Ютубу" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label> Відео2: </label>
+                                                    <input type="text" name="video2" class="form-control" placeholder="Посилання на відео з Ютубу" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                     </div>
-                                    <div class="form-group">
+                                    <!--/ Wizard Container 2 -->
+                                    <!-- Wizard Container 3 -->
+
+                                    <div class="wizard-title"> Фото товару </div>
+                                    <div class="wizard-container">
+
+
+
 
 
 
@@ -295,7 +261,7 @@
                                                  ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
                                                  ctx.fillRect (30, 30, 55, 50); */
 
-/*
+
                                                 ////////////////////////////////////////////////////////////////////////////
                                                 // Подключаем и настраиваем плагин загрузки
 
@@ -327,6 +293,7 @@
                                                         updateInfo();
 
                                                     }
+
                                                 });
 
 
@@ -383,19 +350,19 @@
 
                                                     // Создаем элемент li и помещаем в него название, миниатюру и progress bar
                                                     var li = $('<li/>').appendTo(imgList);
-                                                    /!* var title = $('<div/>').text(file.name+' ').appendTo(li); *!/
+                                                    /* var title = $('<div/>').text(file.name+' ').appendTo(li); */
                                                     var cancelButton = $('<a/>').attr({
                                                         href: '#cancel',
                                                         title: 'отменить'
-                                                    }).html('<img height="15" width="15" alt="X" src="/img/deleteIcon.png">').appendTo(/!* title *!/li);
+                                                    }).html('<img height="15" width="15" alt="X" src="/img/deleteIcon.png">').appendTo(/* title */li);
 
                                                     // Если браузер поддерживает выбор файлов (иначе передается специальный параметр fake,
                                                     // обозночающий, что переданный параметр на самом деле лишь имитация настоящего File)
                                                     if(!file.fake) {
 
                                                         // Отсеиваем не картинки
-                                                        var imageType = /video.*!/;
-                                                        var imageType2 = /image.*!/;
+                                                        var imageType = /video.*/;
+                                                        var imageType2 = /image.*/;
                                                         if (!file.type.match(imageType) && !file.type.match(imageType2)) {
                                                             log('Файл отсеян: `'+file.name+'` (тип '+file.type+')');
                                                             return true;
@@ -404,7 +371,7 @@
                                                         // Добавляем картинку и прогрессбар в текущий элемент списка
                                                         var div = $('<div/>').addClass('photo_frame').attr('rel', '0').appendTo(li);
                                                         var img = $('<img/>').appendTo(li);
-                                                        /!* var pBar = $('<div/>').addClass('progress').attr('rel', '0').text('0%').appendTo(li); *!/
+                                                        /* var pBar = $('<div/>').addClass('progress').attr('rel', '0').text('0%').appendTo(li); */
                                                         // Создаем объект FileReader и по завершении чтения файла, отображаем миниатюру и обновляем
                                                         // инфу обо всех файлах (только в браузерах, подерживающих FileReader)
                                                         if($.support.fileReading) {
@@ -432,9 +399,9 @@
                                                     // Создаем объект загрузки
                                                     var uploadItem = {
                                                         file: file,
-                                                        /!*  onProgress: function(percents) {
+                                                        /*  onProgress: function(percents) {
                                                          updateProgress(pBar, percents);
-                                                         }, *!/
+                                                         }, */
                                                         onComplete: function(successfully, data, errorCode) {
 
                                                             if(successfully) {
@@ -507,6 +474,26 @@
                                                 });
 
 
+                                                // Обработка нажатия на тестовую канву
+                                                /*     $(canvas).click(function() {
+                                                 var blobData;
+                                                 if (canvas.toBlob) {
+                                                 // ожидается, что вскоре браузерами будет поддерживаться метод toBlob() для объектов Canvas
+                                                 blobData = canvas.toBlob();
+                                                 } else {
+                                                 // ... а пока - конвертируем вручную из dataURI
+                                                 blobData = dataURItoBlob(canvas.toDataURL('image/png'));
+                                                 }
+                                                 if (blobData === false) {
+                                                 log("Ваш браузер не поддерживает BlobBuilder");
+                                                 return ;
+                                                 }
+                                                 addFileToQueue(blobData)
+                                                 }); */
+
+
+
+
                                                 ////////////////////////////////////////////////////////////////////////////
                                                 // Проверка поддержки File API, FormData и FileReader
 
@@ -528,93 +515,61 @@
                                                 log('*** Проверка поддержки ***');
 
 
-                                            });*/
+                                            });
 
-
+                                   
                                         </script>
 
-                                      
-
-                                        <script>
 
 
-                                        /*    $('#wizard_btn').click(function() {
-                                                $.ajaxSetup({
-                                                    headers:{
-                                                        'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-                                                    }
-                                                })
-                                                $.ajax({
-                                                    type: "POST",
-                                                    dataType:'json',
-                                                    url: '/functions_form',
-                                                    data: $("#wizard").serialize(), // serializes the form's elements.
-                                                    success: function(data)
-                                                    {
-                                                        alert(data)
 
-                                                        if(data=="redirect:error_photos"){
-                                                            alert('фотографии не выбраны')
-                                                        }
-
-                                                    }
-                                                });
-                                            });*/
-
-
-                                        </script>
 
                                     </div>
 
-                                </div>
-                                <!-- Wizard Container 4 -->
-                                <!-- Wizard Container 4 -->
-                                <div class="wizard-title"> Основне фото </div>
-                                <div class="wizard-container">
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <h5 class="semibold text-primary">
-                                                <i class="fa fa-cog"></i> Основне фото
-                                            </h5>
-                                            <p class="text-muted"> Добавте основне фото </p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
+
+                                    <!--/ Wizard Container 3 -->
+                                    <!-- Wizard Container 4 -->
+
+                                    <div class="wizard-title"> Основне Фото товару </div>
+                                    <div class="wizard-container">
 
 
 
-                                        <div id="appl_window">
 
-                                            <div id="close_window" class="del_prod_btn"></div>
-                                            <div id="add_photo">
+
+
+                                        <div id="appl_window1">
+
+                                            <div id="close_window1" class="del_prod_btn"></div>
+                                            <div id="add_photo1">
                                                 <br>
                                                 <h6>Выберите
                                                     <?
-                                                    $count_images4=1;
-                                                    $image_width4=1200;
-                                                    $image_height4=800;
-                                                    $image_type4='logo';
-                                                    $image_index4=1;
-                                                    echo $count_images4;
-                                                    if($count_images4==1){
+                                                    $count_images=1;
+                                                    $image_width=1200;
+                                                    $image_height=800;
+                                                    $image_type='logo';
+                                                    $image_index=1;
+                                                    echo $count_images;
+                                                    if($count_images==1){
                                                         echo "фотографию";
                                                     }
-                                                    else if($count_images4>1 && $count_images4<5){
+                                                    else if($count_images>1 && $count_images<5){
                                                         echo "фотографии";
                                                     }
-                                                    else if($count_images4>4){
+                                                    else if($count_images>4){
                                                         echo "фотографий";
                                                     }
                                                     ?>
                                                     (не более 2М)
-                                                    <?=$image_width4?>х<?=$image_height4?>px -
-                                                    <?if($image_type4=='logo'){
+                                                    <?=$image_width?>х<?=$image_height?>px -
+                                                    <?if($image_type=='logo'){
                                                         echo "логотип данного производителя";
                                                     }
-                                                    else if($image_type4=='door'){
+                                                    else if($image_type=='door'){
                                                         echo "фотографии выбранной двери";
                                                     }
-                                                    else if($image_type4=='material' or $image_type4=='material_edit'){
+                                                    else if($image_type=='material' or $image_type=='material_edit'){
                                                         echo "фотографии материала";
                                                     }
                                                     ?>
@@ -626,19 +581,19 @@
                                                 <div id="img-container4">
                                                     <ul id="img-list4"></ul>
                                                 </div>
-                                                <div id="leftpanel">
-                                                    <div id="actions">
+                                                <div id="leftpanel1">
+                                                    <div id="actions1">
 
 
-                                                        <input type="hidden" name="lwidth" value="<?=$image_width4?>">
-                                                        <input type="hidden" name="lheight" value="<?=$image_height4?>">
+                                                        <input type="hidden" name="lwidth" value="<?=$image_width?>">
+                                                        <input type="hidden" name="lheight" value="<?=$image_height?>">
                                                         <input type="hidden" name="lproducers" value="/upload">
-                                                        <input type="hidden" name="ltype" value="<?=$image_type4?>">
-                                                        <span id="info-count4">Изображений не выбрано</span><br/>
-                                                        Общий размер:<span id="info-size4">0</span> Кб<br/><br/>
+                                                        <input type="hidden" name="ltype" value="<?=$image_type?>">
+                                                        <span id="info-count1">Изображений не выбрано</span><br/>
+                                                        Общий размер:<span id="info-size1">0</span> Кб<br/><br/>
                                                     </div>
                                                     <div id="console4"></div>
-                                                    <div style="width:250px;" class="btn btn-primary apply_btn">Сохранить фото на сервере</div>
+                                                    <div style="width:250px;" class="btn btn-primary apply_btn1">Сохранить фото на сервере</div>
 
                                                 </div>
                                             </div>
@@ -656,14 +611,14 @@
                                                 var $console = $("#console4");
 
                                                 // Инфа о выбранных файлах
-                                                var countInfo = $("#info-count4");
-                                                var sizeInfo = $("#info-size4");
+                                                var countInfo = $("#info-count1");
+                                                var sizeInfo = $("#info-size1");
 
                                                 // ul-список, содержащий миниатюрки выбранных файлов
                                                 var imgList = $('#img-list4');
 
                                                 // Контейнер, куда можно помещать файлы методом drag and drop
-                                                var dropBox = $('#img-container3');
+                                                var dropBox = $('#img-container4');
 
                                                 // Счетчик всех выбранных файлов и их размера
                                                 var imgCount = 0;
@@ -673,18 +628,29 @@
                                                 // Стандарный input для файлов
                                                 var fileInput = $('#file-field4');
 
+                                                // Тестовый canvas
+                                                /*  var canvas = document.getElementById('canvas');
+                                                 var ctx = canvas.getContext("2d");
+                                                 ctx.fillStyle = "rgb(128,128,128)";
+                                                 ctx.fillRect (0, 0, 150, 150);
+                                                 ctx.fillStyle = "rgb(200,0,0)";
+                                                 ctx.fillRect (10, 10, 55, 50);
+                                                 ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+                                                 ctx.fillRect (30, 30, 55, 50); */
+
+
                                                 ////////////////////////////////////////////////////////////////////////////
                                                 // Подключаем и настраиваем плагин загрузки
 
                                                 fileInput.damnUploader({
                                                     // куда отправлять
-                                                    url: '/functions_images',
+                                                    url: '/functions_image',
                                                     // имитация имени поля с файлом (будет ключом в $_FILES, если используется PHP)
                                                     fieldName:  'my-pic',
                                                     // дополнительно: элемент, на который можно перетащить файлы (либо объект jQuery, либо селектор)
                                                     dropBox: dropBox,
                                                     // максимальное кол-во выбранных файлов (если не указано - без ограничений)
-                                                    limit: <?echo $count_images4?>,
+                                                    limit: <?echo $count_images?>,
                                                     // когда максимальное кол-во достигнуто (вызывается при каждой попытке добавить еще файлы)
                                                     onLimitExceeded: function() {
                                                         log('Допустимое кол-во файлов уже выбрано');
@@ -867,7 +833,7 @@
 
                                                 // Обаботка события нажатия на кнопку "Загрузить все".
                                                 // стартуем все загрузки
-                                                $(".apply_btn").click(function() {
+                                                $(".apply_btn1").click(function() {
                                                     fileInput.damnUploader('startUpload');
 
                                                 });
@@ -882,6 +848,27 @@
                                                     log('*** Все загрузки отменены ***');
                                                     imgList.empty();
                                                 });
+
+
+                                                // Обработка нажатия на тестовую канву
+                                                /*     $(canvas).click(function() {
+                                                 var blobData;
+                                                 if (canvas.toBlob) {
+                                                 // ожидается, что вскоре браузерами будет поддерживаться метод toBlob() для объектов Canvas
+                                                 blobData = canvas.toBlob();
+                                                 } else {
+                                                 // ... а пока - конвертируем вручную из dataURI
+                                                 blobData = dataURItoBlob(canvas.toDataURL('image/png'));
+                                                 }
+                                                 if (blobData === false) {
+                                                 log("Ваш браузер не поддерживает BlobBuilder");
+                                                 return ;
+                                                 }
+                                                 addFileToQueue(blobData)
+                                                 }); */
+
+
+
 
                                                 ////////////////////////////////////////////////////////////////////////////
                                                 // Проверка поддержки File API, FormData и FileReader
@@ -906,49 +893,38 @@
 
                                             });
 
-                                            function print_r(arr, level) {
-                                                var print_red_text = "";
-                                                if(!level) level = 0;
-                                                var level_padding = "";
-                                                for(var j=0; j<level+1; j++) level_padding += "    ";
-                                                if(typeof(arr) == 'object') {
-                                                    for(var item in arr) {
-                                                        var value = arr[item];
-                                                        if(typeof(value) == 'object') {
-                                                            print_red_text += level_padding + "'" + item + "' :\n";
-                                                            print_red_text += print_r(value,level+1);
-                                                        }
-                                                        else
-                                                            print_red_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-                                                    }
-                                                }
-                                                else  print_red_text = "===>"+arr+"<===("+typeof(arr)+")";
-                                                return print_red_text;
-                                            }
+
                                         </script>
 
-                                        <div id="wizard_btn">123</div>
+
 
 
 
                                     </div>
 
-                                </div>
-                                <!-- Wizard Container 4 -->
-                            </form>
-                            <!--/ END Form Wizard -->
-                        </div>
-                    </section>
+
+                                    <!-- Wizard Container 4 -->
+                                </form>
+                                <!--/ END Form Wizard -->
+                            </div>
+                        </section>
+                    </div>
                 </div>
+
+
+
+
             </div>
-
-  
-
+            <!--===================================================-->
+            <!--End page content-->
 
         </div>
         <!--===================================================-->
-        <!--End page content-->
+        <!--END CONTENT CONTAINER-->
+
+
+
 
     </div>
-    <!--===================================================-->
-    <!--END CONTENT CONTAINER-->
+
+

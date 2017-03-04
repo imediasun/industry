@@ -30,6 +30,10 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsToMany('App\Role','role_user');
     }
+    public function status(){
+        return $this->hasOne('App\Customers_statuses');
+    }
+    
 
     public function canDo($permission, $require = FALSE){
         

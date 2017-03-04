@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Good;
+use App\Photo;
+use App\Video;
 use App\Http\Libraries\Display_lib;
 class GoodController extends Controller
 {
@@ -15,9 +17,11 @@ class GoodController extends Controller
 
         //goods
         $data_content['good']=Good::where('id',$id)
-            ->orderBy('created_at', 'desc')
-            ->orderBy('updated_at', 'desc')
-            ->take(5)
+        ->get();
+        $data_content['photos']=Photo::where('id_good',$id)
+            ->get();
+
+        $data_content['video']=Video::where('id_good',$data_content['good'][0]['original']['id'])
             ->get();
         
         //page

@@ -870,10 +870,10 @@ Both of the above methods will produce the same results.
 		unbindSmallNav();
 		updateSize();
 
-		if (updateMethod == 'collapse' || jasmine.container.hasClass('mainnav-sm') ) {
+	/*	if (updateMethod == 'collapse' || jasmine.container.hasClass('mainnav-sm') ) {
 			jasmine.container.removeClass('mainnav-in mainnav-out mainnav-lg');
 			bindSmallNav();
-		}
+		}*/
 
 		mainNavHeight = $('#mainnav').height();
 		updateMethod = false;
@@ -1135,13 +1135,13 @@ Both of the above methods will produce the same results.
 		}
 	},
 	toggleNav = function(){
-		if(jasmine.container.hasClass('mainnav-in') && jasmine.screenSize != 'xs'){
+	/*	if(jasmine.container.hasClass('mainnav-in') && jasmine.screenSize != 'xs'){
 			if(jasmine.screenSize == 'sm'){
 				$.jasmineNav('collapse');
 			}else{
 				jasmine.container.removeClass('mainnav-in mainnav-lg mainnav-sm').addClass('mainnav-out');
 			}
-		}
+		}*/
 	};
 
 
@@ -1161,20 +1161,20 @@ Both of the above methods will produce the same results.
 			// =================================================================
 			// Require nanoScroller
 			// http://jamesflorentino.github.io/nanoScrollerJS/
-			// =================================================================
-			jasmine.aside.find('.nano').nanoScroller({
-				preventPageScrolling : true,
-				alwaysVisible: false
-			});
+// =================================================================
+jasmine.aside.find('.nano').nanoScroller({
+	preventPageScrolling : true,
+	alwaysVisible: false
+});
 
-			var toggleBtn = $('.aside-toggle');
-			if(toggleBtn.length){
-				toggleBtn.on('click', function(e){
-					$.jasmineAside('toggleHideShow');
-				}
-			)}
+var toggleBtn = $('.aside-toggle');
+if(toggleBtn.length){
+	toggleBtn.on('click', function(e){
+			$.jasmineAside('toggleHideShow');
 		}
-	});
+	)}
+}
+});
 
 }(jQuery);
 

@@ -1,4 +1,4 @@
-#console,#console2,#console3 { 
+#console,#console2,#console3,#console4 {
 display:inline-block;
     padding: 10px;
     background-color: #000000;
@@ -28,21 +28,21 @@ display:inline-block;
 background:#fff;
 border:1px solid #000;
 }
-#add_photo{
+#add_photo,#add_photo1{
 height:250px; 
 }
-#img-container3 {
+#img-container3, #img-container4 {
 background: none repeat scroll 0% 0% #EE9; 
 height: 250px;
 }
-#img-container3 ul li{
+#img-container3 ul li, #img-container4 ul li{
 padding:5px 10px;
 display:inline-block;
 }
-#img-list3{
+#img-list3, #img-list4{
 background:#ee9;
 }
-#appl_window{
+#appl_window,#appl_window1{
 position:relative;
 top:0px;
 left:0px;
@@ -100,7 +100,7 @@ height:40px;
 background:#fff;
 border:1px solid #000;
 }
-#add_producer,#add_producer3,#add_model,#add_collection{
+#add_producer,#add_producer3,#add_producer4,#add_model,#add_collection{
 position:relative;
 display:inline-block;
 margin:5px;
@@ -241,6 +241,16 @@ bottom:10px;
 right:10px;
 cursor:pointer;
 }
+.apply_btn1{
+
+    width:170px;
+    height:50px;
+    background-size:100% 100%;
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    cursor:pointer;
+}
 .right_btn{
 background:url(/img/right.png);
 width:50px;
@@ -261,11 +271,11 @@ bottom:10px;
 left:10px;
 cursor:pointer;
 }
-#leftpanel{
+#leftpanel,#leftpanel1{
 margin:10px 0px;
 border-top:1px solid #fff;
 }
-#img-container {
+#img-container,#img-container4 {
     margin-top: 0px;
    
 	width:98%;
@@ -278,7 +288,7 @@ border-top:1px solid #fff;
 #frame_photo_upload{
 padding:10px;
 }
-#console {
+#console,#console4 {
 display:inline-block;
     padding: 10px;
     background-color: #000000;
@@ -292,7 +302,7 @@ display:inline-block;
     margin:5px 5px;
 	float:left;
 }
-#actions{
+#actions,#actions1{
 display:inline-block;
 float:left;
 }

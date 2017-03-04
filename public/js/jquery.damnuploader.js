@@ -138,7 +138,14 @@
     function checkIsFile(item) {
         return (item instanceof File) || (item instanceof Blob);
     }
-
+    function count(obj) {
+        var count = 0;
+        for(var prs in obj)
+        {
+            if(obj.hasOwnProperty(prs)) count++;
+        }
+        return count;
+    }
     ////////////////////////////////////////////////////////////////////////////
     // plugin code
     $.fn.damnUploader = function(params, data) {
@@ -201,7 +208,7 @@
                 }
                 if (files instanceof FileList) {
                     $.each(files, function(i, file) {
-					alert(file)
+					/*alert(file)*/
                         if (self._damnUploaderItemsCount === set.limit) {
                             if (self._damnUploaderItemsCount === set.limit) {
                                 return $.isFunction(set.onLimitExceeded) ? set.onLimitExceeded.call(self) : false;
@@ -279,11 +286,32 @@
                 xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                 if ($.support.fileSending) {
-				alert(item.file)
-                    // W3C (Chrome, Safari, Firefox 4+)
-                    var formData = new FormData();
-                    formData.append((item.fieldName || 'file'), item.file);
-                    xhr.send(formData);
+
+                 var cnt=count(queue);
+                 if(cnt >1){
+                    if (confirm("Загрузить фотографию?")) {
+                       if (confirm("Фото загружено, загрузить следующую?")) {
+                       alert("OK");
+                       } else {
+                       alert("Вы нажали кнопку отмена")
+                       }
+                        /*alert('item_file'+item.file)*/
+                        // W3C (Chrome, Safari, Firefox 4+)
+                        var formData = new FormData();
+                        formData.append((item.fieldName || 'file'), item.file);
+                        xhr.send(formData);
+
+                    } else {
+                        alert("Вы нажали кнопку отмена")
+                    }
+                 }
+                    else{
+                     var formData = new FormData();
+                     formData.append((item.fieldName || 'file'), item.file);
+                     xhr.send(formData);
+
+
+                 }
                 } else if ($.support.fileReading && xhr.sendAsBinary) {
                     // firefox < 4
                     var boundary = "xxxxxxxxx";
@@ -411,7 +439,7 @@
                         }
                         if ((self._damnUploaderItemsCount == 0) && ($.isFunction(set.onAllComplete))) {
 						    set.onAllComplete.call(self,data);
-							
+
 						}
                     };
                     self._damnUploaderUploadItem(set.url, item);
@@ -483,11 +511,11 @@ function print_r(arr, level) {
             if(typeof(value) == 'object') {
                 print_red_text += level_padding + "'" + item + "' :\n";
                 print_red_text += print_r(value,level+1);
-		} 
-            else 
+		}
+            else
                 print_red_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
         }
-    } 
+    }
     else  print_red_text = "===>"+arr+"<===("+typeof(arr)+")";
     return print_red_text;
 }

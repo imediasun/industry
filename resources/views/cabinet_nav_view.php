@@ -5,7 +5,7 @@
     <!--===================================================-->
     <section id="content-container">
         <header class="pageheader">
-            <h3><i class="fa fa-home"></i> Личный кабинет Лопушанский Андрей</h3>
+            <h3><i class="fa fa-home"></i> Личный кабинет <?php echo $user_information[0]['original']['name']?></h3>
             <div style="width:600px;top:-30px;margin:0 auto;" class="input-group mar-btm">
                 <input placeholder="Пошук" class="form-control" type="text">
                                             <span class="input-group-btn">

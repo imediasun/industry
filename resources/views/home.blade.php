@@ -5,10 +5,26 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Веб сайт Ukrainian Industry Platform</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    Ви залогінені!
+
+                    <?php
+                    if(Gate::denies('VIEW_ADMIN')){
+                    ?>
+                        <a href="/">Перехід на сайт</a>
+                    <?
+                    }
+                    else{
+                    ?>
+                    <a href="/admin">Перехід в адмін частину</a><br>
+                    <a href="/">Перехід на сайт</a>
+                    <?
+
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>

@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use DB;
+use Illuminate\Http\Request;
+use App\ActivationService;
 class RegisterController extends Controller
 {
     /*
@@ -28,15 +30,17 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
+    protected $activationService;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ActivationService $activationService)
     {
-        $this->middleware('guest');
+        /*$this->middleware('guest');*/
+        $this->middleware('guest', ['except' => 'logout']);
+        $this->activationService = $activationService;
     }
 
     /**
@@ -87,6 +91,24 @@ class RegisterController extends Controller
         return $userCreate;
     }
 
+
+    public function register(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $user = $this->create($request->all());
+
+        $this->activationService->sendActivationMail($user);
+
+        return redirect('/login')->with('status', 'Ми відправили вам лист про активацію email.');
+    }   
+    
     private function mail(){
         dd('mail');
     }

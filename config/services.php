@@ -37,7 +37,7 @@ return [
     'facebook' => [
         'client_id' => '1866465956955702',
         'client_secret' => 'ce6c7fcf81255f75abb549a7bc558c79',
-        'redirect' => 'http://industry.imedia.in.ua/auth/facebook/callback',
+        'redirect' => 'http://industry.loc/auth/facebook/callback',
     ],
 
 ];

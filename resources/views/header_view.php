@@ -470,6 +470,37 @@
                             echo (Illuminate\Support\Facades\Auth::user()->name);
                             ?>
                             </span></a>
+                                <div class="dropdown-menu dropdown-menu-right with-arrow">
+                                    <?php
+                                    if(Auth::user()){
+
+
+                                    }
+                                    ?>
+                                    <!-- User dropdown menu -->
+                                    <ul class="head-list">
+                                        <li>
+                                            <a href="/cabinet/<?php echo Illuminate\Support\Facades\Auth::user()->id ?>">
+                                                <i class="fa fa-user fa-fw fa-lg"></i>Кабінет </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-envelope fa-fw fa-lg"></i> Повідомлення </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ url('/logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                Вийти
+                                            </a>
+
+                                            <form id="logout-form" action="<?php echo url('/logout') ?>" method="POST" style="display: none;">
+                                                <?php echo csrf_field() ?>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             <?
                             }
                             if(Auth::guest()){
@@ -485,39 +516,32 @@
                             }
                             ?>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right with-arrow">
 
-                        <!-- User dropdown menu -->
-                        <ul class="head-list">
-                            <li>
-                                <a href="#"> <i class="fa fa-user fa-fw fa-lg"></i> Особистий кабінет </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-envelope fa-fw fa-lg"></i> Повідомлення </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    Вийти
-                                </a>
-
-                                <form id="logout-form" action="<?php echo url('/logout') ?>" method="POST" style="display: none;">
-                                    <?php echo csrf_field() ?>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End user dropdown-->
 
                 <!--Navigation toogle button-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <li class="tgl-menu-btn">
+
+                <?
+                if(isset(Illuminate\Support\Facades\Auth::user()->roles)){
+                $roles=Illuminate\Support\Facades\Auth::user()->roles;
+                foreach($roles as $role){
+                    if($role['original']['name']=='Admin'){
+                    ?>
+                    <li class="tgl-menu-btn">
                     <a id="demo-toggle-aside" class="shortcut-grid" href="#"> <i class="fa fa-dedent"></i> </a>
-                </li>
+                    </li>
+                    <?
+                    }
+
+                }
+                }
+                ?>
+
+
+
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End Navigation toogle button-->
 
