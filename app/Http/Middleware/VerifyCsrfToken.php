@@ -15,7 +15,7 @@ namespace App\Http\Middleware ;
 
 
         'admin/customers_managment',
-            'cabinet'
+         'cabinet'
         ];
 
       public function handle($request, Closure $next){
@@ -31,7 +31,7 @@ namespace App\Http\Middleware ;
          */
       protected function tokensMatch($request)
         {
-            
+            return true;
             // If request is an ajax request, then check to see if token matches token provider in
             // the header. This way, we can use CSRF protection in ajax requests also.
             $token = $request->ajax() ? $request->header('X-CSRF-Token') : $request->input('_token');

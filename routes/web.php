@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::auth();
+Auth::routes();
 Route::get('/', 'MainController@index');
 /*Route::get('/admin', 'AdminController@index');
 Route::get('/admin/customers_managment', 'AdminController@customers_managment');
@@ -21,14 +21,14 @@ Route::get('/admin/del_good', 'AdminController@del_good');*/
     return view('index');
 });*/
 
-Auth::routes();
+
 
 Route::post('/functions_images', 'FunctionsController@index');
 Route::post('/functions_image', 'FunctionsController@main_image');
 Route::post('/functions_form', 'FunctionsController@form');
 
 Route::get('/home', 'HomeController@index');
-Route::get('/good/{id}', 'GoodController@index')->where('id', '[0-9]+');
+Route::get('/good/{id}', 'GoodController@index')->where('id', '[0-9]+')->name('good');
 Route::get('/cabinet/{id}', 'PrivateCabinetController@index')->where('id', '[0-9]+');
 Route::get('/cabinet/orders/{id}', 'PrivateCabinetController@orders')->where('id', '[0-9]+');
 Route::get('/cabinet/likes/{id}', 'PrivateCabinetController@likes')->where('id', '[0-9]+');
@@ -60,6 +60,9 @@ Route::group(['prefix' => 'admin','middleware'=>['web','auth']],function(){
 /*Route::get('sendmail','')*/
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
 Route::get('/add_to_cart/{id}','ShopingCartController@addToCart')->name('add_to_cart');
+Route::get('/shoping_cart','ShopingCartController@getCart')->name('shoping_cart');
+Route::get('/checkout','ShopingCartController@getCheckout')->name('checkout');
+
 
 
 

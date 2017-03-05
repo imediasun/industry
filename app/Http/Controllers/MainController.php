@@ -25,7 +25,7 @@ class MainController extends Controller
     public function index()
     {
     //Get data from DB
-
+    
         //menu
         $data_nav['menu']=MenuController::index('categories');
       

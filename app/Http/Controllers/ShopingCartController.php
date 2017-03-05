@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\MailService;
 use Illuminate\Http\Request;
 use App\Good;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Session;
 use App\Cart;
+use Auth;
 class ShopingCartController extends Controller
 {
     protected $id;
@@ -15,36 +17,52 @@ class ShopingCartController extends Controller
 
     //
     public function addToCart($id){
-    session_start();
-    dump($id);
-    dump($_GET['qnt']);
-    dump($_SESSION);
-       
-        $good=Good::find($id);
-       $this->product=$good['original'];
-        $this->product['qnt']=(int)$_GET['qnt'];
-       
-        if (isset($_SESSION['cart'])) {
-            dump('has_cart');
-            dump($_SESSION['cart']);
-            $oldCart =$_SESSION['cart'];
-            dump('old_cart after prisvoeniya');
-            dump($oldCart);
+
+        if(!Auth::guest()) {
+        /*    session_start();*/
+            $good = Good::find($id);
+            $this->product = $good['original'];
+            $this->product['qnt'] = (int)$_GET['qnt'];
+
+            /*if (isset($_SESSION['cart'])) {
+                $oldCart = $_SESSION['cart'];
+            } else {
+                $oldCart = null;
+            }*/
+            $cart = new Cart($oldCart);
+            $cart->add($this->product, $this->product['id']);
+            /*session()->put('cart',$cart);*/
+            /*$_SESSION['cart'] = $cart;*/
+            return redirect()->route('good', $id);
         }
-        else{$oldCart = null;
+        else{
+            return view('auth.login');
         }
-        
+    }
+
+    public function getCart(){
+    /*session_start();*/
+      /*  if(!isset($_SESSION['cart'])){
+            return view('shop.shoping_cart',['products'=> null]);
+
+
+        }
+        $oldCart = $_SESSION['cart'];*/
         $cart=new Cart($oldCart);
-        
+        return view('shop.shoping_cart',['products'=> $cart->items, 'totalPrice'=>$cart->totalPrice]);
+    }
 
-        $cart->add($this->product,$this->product['id']);
-        
-        /*session()->put('cart',$cart);*/
-        $_SESSION['cart']=$cart;
-        dump('cart puted');
-
-        dd($_SESSION);
-        return redirect()->route('good/'.$id);
+    public function getCheckout(){
+       /* if(!isset($_SESSION['cart'])){
+            return view('shop.shoping_cart',['products'=> null]);
+        }
+        $oldCart=$_SESSION['cart'];*/
+        $cart=new Cart($oldCart);
+        $total = $cart->totalPrice;
+        $mail['subject']='Оформлення заказу';
+        $mail['message']='Ви оформили наступний заказ';
+        /*MailService::sendMail($mail);*/
+        /*return view('shop.checkout', ['total'=>$total]);*/
         
     }
 }

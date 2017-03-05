@@ -187,10 +187,23 @@
                 <!--Messages Dropdown-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <li  style="margin-top:-4px" class="a_drop dropdown">
-                    <a href="#"  data-toggle="dropdown" class=" dropdown-toggle"> <i  style="font-size:24px" class="a_drop fa fa-shopping-cart fa-3x "></i> <span class="badge badge-header badge-warning">9</span> </a>
+                    <a href="<?php echo route('shoping_cart')?>">  <!--data-toggle="dropdown" class=" dropdown-toggle"-->
+                        <i  style="font-size:24px" class="a_drop fa fa-shopping-cart fa-3x "></i>
+                        <?php
+
+                 /*       if(isset($_SESSION['cart'])){
+                            $cart_count=$_SESSION['cart']->totalQty;
+                        }
+                        else{
+                        $cart_count=0;
+                        }*/
+
+                        ?>
+                        <span style="position:absolute;left:27px;" class="badge badge-header badge-warning"><?php /*echo $cart_count;*/?></span>
+                    </a>
 
                     <!--Message dropdown menu-->
-                    <div  class="dropdown-menu dropdown-menu-md with-arrow">
+                   <!-- <div  class="dropdown-menu dropdown-menu-md with-arrow">
                         <div class="pad-all bord-btm">
                             <p class="text-lg text-muted text-thin mar-no">You have 3 messages.</p>
                         </div>
@@ -199,27 +212,27 @@
                                 <ul class="head-list">
 
                                     <!-- Dropdown list-->
-                                    <li>
+                                   <!-- <li>
                                         <a href="#" class="media">
                                             <div class="media-left"> <img src="img/av2.png" alt="Profile Picture" class="img-circle img-sm"> </div>
                                             <div class="media-body">
                                                 <div class="text-nowrap">Andy sent you a message</div>
                                                 <small class="text-muted">15 minutes ago</small> </div>
                                         </a>
-                                    </li>
+                                    </li>-->
 
                                     <!-- Dropdown list-->
-                                    <li>
+                                    <!--<li>
                                         <a href="#" class="media">
                                             <div class="media-left"> <img src="img/av4.png" alt="Profile Picture" class="img-circle img-sm"> </div>
                                             <div class="media-body">
                                                 <div class="text-nowrap">Lucy sent you a message</div>
                                                 <small class="text-muted">30 minutes ago</small> </div>
                                         </a>
-                                    </li>
+                                    </li>-->
 
                                     <!-- Dropdown list-->
-                                    <li>
+                                   <!-- <li>
                                         <a href="#" class="media">
                                             <div class="media-left"> <img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm"> </div>
                                             <div class="media-body">
@@ -227,29 +240,29 @@
                                                 <small class="text-muted">40 minutes ago</small> </div>
                                         </a>
                                     </li>
-
+-->
                                     <!-- Dropdown list-->
-                                    <li>
+                                   <!-- <li>
                                         <a href="#" class="media">
                                             <div class="media-left"> <img src="img/av6.png" alt="Profile Picture" class="img-circle img-sm"> </div>
                                             <div class="media-body">
                                                 <div class="text-nowrap">Donna sent you a message</div>
                                                 <small class="text-muted">5 hours ago</small> </div>
                                         </a>
-                                    </li>
+                                    </li>-->
 
                                     <!-- Dropdown list-->
-                                    <li>
+                                   <!-- <li>
                                         <a href="#" class="media">
                                             <div class="media-left"> <img src="img/av4.png" alt="Profile Picture" class="img-circle img-sm"> </div>
                                             <div class="media-body">
                                                 <div class="text-nowrap">Lucy sent you a message</div>
                                                 <small class="text-muted">Yesterday</small> </div>
                                         </a>
-                                    </li>
+                                    </li>-->
 
                                     <!-- Dropdown list-->
-                                    <li>
+                                   <!-- <li>
                                         <a href="#" class="media">
                                             <div class="media-left"> <img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm"> </div>
                                             <div class="media-body">
@@ -259,13 +272,13 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
 
                         <!--Dropdown footer-->
-                        <div class="pad-all bord-top">
+                        <!--<div class="pad-all bord-top">
                             <a href="#" class="btn-link text-dark box-block"> <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Messages </a>
                         </div>
-                    </div>
+                    </div>-->
                 </li>
 
             </ul>

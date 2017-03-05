@@ -3,14 +3,14 @@
 namespace App\Http\Libraries;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 class Display_lib
 {
     public static $num;
     public static function index($path,$data,$data_nav,$data_content)
     {
-session_start();
-        dump($_SESSION);
+        
+/*session_start();*/
+/*dump(session()->all());*/
         $view=view('preheader_view',$data)->render();
         $view.=view('header_view')->render();
         $view.=view('main_navigation_view',$data_nav)->render();
